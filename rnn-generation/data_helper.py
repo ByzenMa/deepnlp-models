@@ -5,6 +5,7 @@ import pickle
 from pathlib2 import Path
 
 data_dir = './data/simpsons/moes_tavern_lines.txt'
+save_dir = './save'
 
 
 # 加载数据
@@ -75,14 +76,10 @@ def load_preprocess():
     return pickle.load(open('data/preprocess.p', mode='rb'))
 
 
-# 保存参数
-def save_params(params):
-    pickle.dump(params, open('data/params.p', 'wb'))
-
-
 # 加载参数
-def load_params():
-    return pickle.load(open('data/params.p', mode='rb'))
+def get_params():
+    _, seq_length = get_text_info()
+    return seq_length, save_dir
 
 
 # 获得文本信息

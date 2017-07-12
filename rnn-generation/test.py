@@ -1,53 +1,78 @@
 import tensorflow as tf
 import numpy as np
+import data_helper as helper
 
-def get_tensor_by_name():
-    inputTensor = tf.Graph.get_tensor_by_name('')
-    np.array([1,3]).shape
+_, vocab_to_int, int_to_vocab, token_dict = helper.load_preprocess()
 
 
-def get_batches(int_text, batch_size, seq_length):
+def get_tensors(loaded_graph):
     """
-    Return batches of input and target
-    :param int_text: Text with the words replaced by their ids
-    :param batch_size: The size of batch
-    :param seq_length: The length of sequence
-    :return: Batches as a Numpy array
+    Get input, initial state, final state, and probabilities tensor from <loaded_graph>
+    :param loaded_graph: TensorFlow graph loaded from file
+    :return: Tuple (InputTensor, InitialStateTensor, FinalStateTensor, ProbsTensor)
     """
-    text_len = len(int_text)
-    batchs = text_len / (batch_size * seq_length)
-    if text_len < batchs * batch_size * seq_length + 1:
-        batchs -= 1
-    if batchs < 1:
-        return []
-    input_len = batchs * batch_size * seq_length
-    input_text = np.array(int_text[:input_len]).reshape([batch_size, -1])
-    target_text = np.array(int_text[1:input_len + 1]).reshape([batch_size, -1])
-    batchs_data = np.ndarray((batchs, 2, batch_size, seq_length), dtype=np.int32)
-    for i in range(batchs):
-        input_batch = input_text[:, i * seq_length:(i + 1) * seq_length]
-        target_batch = target_text[:, i * seq_length:(i + 1) * seq_length]
-        batchs_data[i, 0, :, :] = input_batch
-        batchs_data[i, 1, :, :] = target_batch
-    return batchs_data
+    inputTensor = loaded_graph.get_tensor_by_name("input:0")
+    initialStateTensor = loaded_graph.get_tensor_by_name("initial_state:0")
+    finalStateTensor = loaded_graph.get_tensor_by_name("final_state:0")
+    probsTensor = loaded_graph.get_tensor_by_name("probs:0")
+    return inputTensor, initialStateTensor, finalStateTensor, probsTensor
 
 
-def create_lookup_tables(text):
+def pick_word(probabilities, int_to_vocab):
     """
-    Create lookup tables for vocabulary
-    :param text: The text of tv scripts split into words
-    :return: A tuple of dicts (vocab_to_int, int_to_vocab)
+    Pick the next word in the generated text
+    :param probabilities: Probabilites of the next word
+    :param int_to_vocab: Dictionary of word ids as the keys and words as the values
+    :return: String of the predicted word
     """
-    vocab_to_int = {}
-    for word in text.split(' '):
-        if word not in vocab_to_int:
-            vocab_to_int[word] = len(vocab_to_int)
-    int_to_vocab = dict((v, k) for k, v in vocab_to_int.iteritems())
-    return vocab_to_int, int_to_vocab
+    #     p_list = probabilities.tolist()
+    #     idx = p_list.index(max(p_list))
+    idx = np.random.choice(len(probabilities), p=probabilities)
+    word = int_to_vocab[idx]
+    return word
 
 
-if __name__ == '__main__':
-    int_text = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-    batch_size = 2
-    seq_length = 3
-    print get_batches(int_text, batch_size, seq_length)
+def test():
+    seq_length, load_dir = helper.get_params()
+    gen_length = 200
+    # homer_simpson, moe_szyslak, or Barney_Gumble
+    prime_word = 'moe_szyslak'
+
+    """
+    DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
+    """
+    loaded_graph = tf.Graph()
+    with tf.Session(graph=loaded_graph) as sess:
+        # Load saved model
+        loader = tf.train.import_meta_graph(load_dir + '.meta')
+        loader.restore(sess, load_dir)
+
+        # Get Tensors from loaded model
+        input_text, initial_state, final_state, probs = get_tensors(loaded_graph)
+
+        # Sentences generation setup
+        gen_sentences = [prime_word + ':']
+        prev_state = sess.run(initial_state, {input_text: np.array([[1]])})
+
+        # Generate sentences
+        for n in range(gen_length):
+            # Dynamic Input
+            dyn_input = [[vocab_to_int[word] for word in gen_sentences[-seq_length:]]]
+            dyn_seq_length = len(dyn_input[0])
+
+            # Get Prediction
+            probabilities, prev_state = sess.run(
+                [probs, final_state],
+                {input_text: dyn_input, initial_state: prev_state})
+            pred_word = pick_word(probabilities[0, dyn_seq_length - 1], int_to_vocab)
+            gen_sentences.append(pred_word)
+
+        # Remove tokens
+        tv_script = ' '.join(gen_sentences)
+        for key, token in token_dict.items():
+            ending = ' ' if key in ['\n', '(', '"'] else ''
+            tv_script = tv_script.replace(' ' + token.lower(), key)
+        tv_script = tv_script.replace('\n ', '\n')
+        tv_script = tv_script.replace('( ', '(')
+
+        print(tv_script)
