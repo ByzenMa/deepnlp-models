@@ -1,8 +1,8 @@
-##1.模型简介
+1.模型简介
 
 该模型用于实验电影字幕生成。主要用于试用RNN模型，因此模型结构相对简单。最后生成的电影字幕有很多都是没有语义的。
 
-##2.要点
+2.要点
 
 - 采用train, test, data_helper以及model的形式，将深度学习模型的书写结构固化成这种形式，有利于代码的阅读和扩展
 - 采用tf.contrib.layers.embed_sequence(input_text, vocab_size, embed_dim)的方法直接将输入文本（转换成数字后）转换成添加成embed层后的
