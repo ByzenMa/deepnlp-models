@@ -65,6 +65,7 @@ def train_and_test(challenge):
         with tf.Session(config=tf.ConfigProto(gpu_options=gpu_options), graph=graph) as sess:
             # 初始化所有变量
             sess.run(init)
+            max_test_acc = 0
             for i in range(FLAGS.num_epochs):
                 batch_id = 1
                 train_gen = helper.generate_data(FLAGS.batch_size, x, xq, y)
@@ -85,8 +86,13 @@ def train_and_test(challenge):
                                  dropout_pl: 1.0}
                     cor = sess.run(correct, feed_dict=feed_dict)
                     total_correct += int(cor)
-                acc = total_correct*1.0 / total
-                print ('Epoch{:>3}   train_loss = {:.3f}   accuary = {:.3f}'.format(i, cost, acc))
+                acc = total_correct * 1.0 / total
+                # 获得max test accuary
+                if acc > max_test_acc:
+                    max_test_acc = acc
+                print (
+                'Epoch{:>3}   train_loss = {:.3f}   accuary = {:.3f}   max_text_acc = {:.3f}'.format(i, cost, acc,
+                                                                                                     max_test_acc))
 
 
 def train_process():
@@ -95,7 +101,7 @@ def train_process():
     :return:
     '''
     print_param()
-    challenge = 'tasks_1-20_v1-2/en/qa2_two-supporting-facts_{}.txt'
+    challenge = 'tasks_1-20_v1-2/en/qa1_single-supporting-fact_{}.txt'
     train_and_test(challenge)
 
 
