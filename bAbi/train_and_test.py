@@ -91,8 +91,9 @@ def train_and_test(challenge):
                 if acc > max_test_acc:
                     max_test_acc = acc
                 print (
-                'Epoch{:>3}   train_loss = {:.3f}   accuary = {:.3f}   max_text_acc = {:.3f}'.format(i, cost, acc,
-                                                                                                     max_test_acc))
+                    'Epoch{:>3}   train_loss = {:.3f}   accuary = {:.3f}   max_text_acc = {:.3f}'.format(i, cost, acc,
+                                                                                                         max_test_acc))
+            return max_test_acc
 
 
 def train_process():
@@ -102,7 +103,7 @@ def train_process():
     '''
     print_param()
     challenge = 'tasks_1-20_v1-2/en/qa1_single-supporting-fact_{}.txt'
-    train_and_test(challenge)
+    max_test_acc = train_and_test(challenge)
 
 
 if __name__ == "__main__":
