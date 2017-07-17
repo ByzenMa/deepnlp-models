@@ -4,6 +4,8 @@ import tensorflow as tf
 import tarfile
 import numpy as np
 
+SEED = 2017
+
 TAR_GZ = './data/babi_tasks_1-20_v1-2.tar.gz'
 
 
@@ -105,6 +107,36 @@ def pad_sequences(sequences, maxlen=None):
     :return:
     '''
     return tf.contrib.keras.preprocessing.sequence.pad_sequences(sequences, maxlen)
+
+
+def generate_data(batch_size, story, question, answer, shuffle=True):
+    '''
+    生成迭代器
+    :param batch_size:
+    :param story:
+    :param question:
+    :param answer:
+    :param shuffle:
+    :return:
+    '''
+    assert len(story) == len(question) == len(answer), \
+        "story, question和answer的长度不相等，请检查数据是否正确"
+    length = len(story)
+    story_arry = np.array(story)
+    question_arry = np.array(question)
+    answer_arry = np.array(answer)
+    if shuffle:
+        np.random.seed(SEED)
+        idx = np.random.permutation(length)
+        story_arry = story_arry[idx]
+        question_arry = question_arry[idx]
+        answer_arry = answer_arry[idx]
+    total_batch = int(length / batch_size)
+    story_arry_list = np.split(story_arry[:total_batch * batch_size], total_batch, 0)
+    question_arry_list = np.split(question_arry[:total_batch * batch_size], total_batch, 0)
+    answer_arry_list = np.split(answer_arry[:total_batch * batch_size], total_batch, 0)
+    for i in range(total_batch):
+        yield story_arry_list[i], question_arry_list[i], answer_arry_list[i]
 
 
 if __name__ == "__main__":

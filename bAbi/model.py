@@ -1,23 +1,25 @@
+# encoding=utf-8
 import tensorflow as tf
 
 
 class RNN(object):
-    def __init__(self, rnn_cell, embed_hidden_size, sent_hidden_size, query_hidden_size, vocab_size):
+    def __init__(self, rnn_cell, embed_size, hidden_size, vocab_size):
         self.basic_cell = rnn_cell
-        self.embed_hidden_size = embed_hidden_size
-        self.sent_hidden_size = sent_hidden_size
-        self.query_hidden_size = query_hidden_size
+        self.embed_hidden_size = embed_size
+        self.rnn_size = embed_size  # 由于story和question相加，因此隐层大小设置为一致
         self.vocab_size = vocab_size
 
     def inference(self, x, xq, dropout):
         # 获得story的嵌入
         x_embed = self.get_embed(x, dropout)
         # 获得question的嵌入
-        xq_embed = self.get_embde(xq, dropout)
-        xq_encode = self.get_rnn_encode(xq_embed)
+        xq_embed = self.get_embed(xq, dropout)
+        with tf.variable_scope('rnn1'):
+            xq_encode = self.get_rnn_encode(xq_embed)
         # 合并xq_encode和x_embed，将每个x_embed的输入加上question的编码信息，该机制类似attention机制
         merged = self.get_merged(x_embed, xq_encode)
-        merged_encode = self.get_rnn_encode(merged)
+        with tf.variable_scope('rnn2'):
+            merged_encode = self.get_rnn_encode(merged)
         # 获得预测输入logits，注意这里采用最后的隐层信息来进行预测
         logits = self.get_logits(merged_encode)
         return logits
@@ -32,11 +34,24 @@ class RNN(object):
         loss = tf.nn.softmax_cross_entropy_with_logits(labels=labels, logits=logits)
         return tf.reduce_mean(loss)
 
-    def train(self):
-        pass
+    def train(self, loss, init_learning_rate):
+        '''
+        采用Adam来更新参数
+        :param loss:
+        :param init_learning_rate:
+        :return:
+        '''
+        return tf.train.AdamOptimizer(init_learning_rate).minimize(loss)
 
-    def eval(self):
-        pass
+    def eval(self, logits, labels):
+        '''
+        返回正确的个数
+        :param logits:
+        :param labels:
+        :return:
+        '''
+        correct_prediction = tf.equal(tf.argmax(labels, 1), tf.argmax(logits, 1))
+        return tf.reduce_sum(tf.cast(correct_prediction, 'int32'))
 
     def get_embed(self, input, dropout):
         '''
@@ -78,9 +93,7 @@ class RNN(object):
             cell = cell_fn(lstm_size)
             return cell
 
-        # 建立多层rnn结构
-        cell = tf.nn.rnn_cell.MultiRNNCell([build_cell(self.rnn_size) for _ in range(self.rnn_layer)])
-        return cell
+        return build_cell(self.rnn_size)
 
     def cell_run(self, cell, embed):
         '''
@@ -92,7 +105,7 @@ class RNN(object):
         outputs, final_state = tf.nn.dynamic_rnn(cell, embed,
                                                  dtype=tf.float32)  # 这里只要声明了dtype，那么就可以不用声明初始state，默认为zero_state
         final_state = tf.identity(final_state, name='final_state')
-        return outputs, final_state
+        return outputs, final_state[-1]
 
     def get_merged(self, x_embed, xq_encode):
         '''
@@ -101,9 +114,10 @@ class RNN(object):
         :param xq_encode:[batch_size, embed_hidden_size]
         :return:
         '''
-        seq_len = x_embed.shape().to_list()[1]
+        seq_len = x_embed.get_shape().as_list()[1]
+        # xq_encode_affine = tf.layers.dense(xq_encode, self.embed_hidden_size, activation=tf.nn.relu)
         xq_encode_repeat = tf.contrib.keras.layers.RepeatVector(seq_len)(xq_encode)
-        assert x_embed.shape().to_list() == xq_encode_repeat.shape().to_list(), \
+        assert x_embed.get_shape().as_list() == xq_encode_repeat.get_shape().as_list(), \
             'x_embed and xq_encode_repeat doesn\'t have same shape'
         merged = tf.add(x_embed, xq_encode_repeat)
         return merged
