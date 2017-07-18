@@ -121,7 +121,7 @@ def train_process():
 
     # 打印所有结果
     for prefix, task, max_test_acc in results:
-        print prefix, task, max_test_acc
+        print FLAGS.rnn_cell, prefix, task, max_test_acc
 
 
 if __name__ == "__main__":
