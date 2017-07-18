@@ -4,10 +4,10 @@ import model
 import data_helper as helper
 
 # 模型超参
-tf.flags.DEFINE_string("rnn_cell", "lstm", "rnn cell")
+tf.flags.DEFINE_string("rnn_cell", "rnn", "rnn cell")
 tf.flags.DEFINE_integer("rnn_size", 100, "rnn size")
 tf.flags.DEFINE_integer("embed_dim", 50, "embeding size")
-tf.flags.DEFINE_float("init_learning_rate", 0.002, "initial learning rate")
+tf.flags.DEFINE_float("init_learning_rate", 0.001, "initial learning rate")
 tf.flags.DEFINE_float("dropout", 0.3, "dropout")
 tf.flags.DEFINE_float("gpu_fraction", 0.9, "gpu fraction")
 # 训练参数
@@ -102,8 +102,26 @@ def train_process():
     :return:
     '''
     print_param()
-    challenge = 'tasks_1-20_v1-2/en/qa1_single-supporting-fact_{}.txt'
-    max_test_acc = train_and_test(challenge)
+    prefixs = ['en']
+    tasks = [
+        'qa1_single-supporting-fact', 'qa2_two-supporting-facts', 'qa3_three-supporting-facts',
+        'qa4_two-arg-relations', 'qa5_three-arg-relations', 'qa6_yes-no-questions', 'qa7_counting',
+        'qa8_lists-sets', 'qa9_simple-negation', 'qa10_indefinite-knowledge',
+        'qa11_basic-coreference', 'qa12_conjunction', 'qa13_compound-coreference',
+        'qa14_time-reasoning', 'qa15_basic-deduction', 'qa16_basic-induction', 'qa17_positional-reasoning',
+        'qa18_size-reasoning', 'qa19_path-finding', 'qa20_agents-motivations'
+    ]
+    suffix = '_{}.txt'
+    results = []
+    for prefix in prefixs:
+        for task in tasks:
+            challenge = 'tasks_1-20_v1-2/' + prefix + '/' + task + suffix
+            max_test_acc = train_and_test(challenge)
+            results.append((prefix, task, max_test_acc))
+
+    # 打印所有结果
+    for prefix, task, max_test_acc in results:
+        print prefix, task, max_test_acc
 
 
 if __name__ == "__main__":

@@ -105,7 +105,13 @@ class RNN(object):
         outputs, final_state = tf.nn.dynamic_rnn(cell, embed,
                                                  dtype=tf.float32)  # 这里只要声明了dtype，那么就可以不用声明初始state，默认为zero_state
         final_state = tf.identity(final_state, name='final_state')
-        return outputs, final_state[-1]
+        if len(final_state.get_shape().as_list()) == 3:
+            final_state = final_state[-1]
+        elif len(final_state.get_shape().as_list()) == 2:
+            final_state = final_state
+        else:
+            assert "final_state的维度为{}, 期望维度为2或者3，请检查".format(final_state.get_shape().as_list())
+        return outputs, final_state
 
     def get_merged(self, x_embed, xq_encode):
         '''
