@@ -4,12 +4,12 @@ import model
 import data_helper as helper
 
 # 模型超参
-tf.flags.DEFINE_string("rnn_cell", "rnn", "rnn cell")
+# tf.flags.DEFINE_string("rnn_cell", "rnn", "rnn cell")
 tf.flags.DEFINE_integer("rnn_size", 100, "rnn size")
 tf.flags.DEFINE_integer("embed_dim", 50, "embeding size")
 tf.flags.DEFINE_float("init_learning_rate", 0.001, "initial learning rate")
 tf.flags.DEFINE_float("dropout", 0.3, "dropout")
-tf.flags.DEFINE_float("gpu_fraction", 0.9, "gpu fraction")
+tf.flags.DEFINE_float("gpu_fraction", 0.99, "gpu fraction")
 # 训练参数
 tf.flags.DEFINE_integer("batch_size", 32, "batch size")
 tf.flags.DEFINE_integer("num_epochs", 40, "number epochs")
@@ -43,7 +43,7 @@ def get_placeholder(vocab_size, story_maxlen, query_maxlen):
     return story_pl, question_pl, answer_pl, dropout_pl
 
 
-def train_and_test(challenge):
+def train_and_test(challenge, rnn_cell):
     '''
     训练模型
     :return:
@@ -55,7 +55,7 @@ def train_and_test(challenge):
     tx, txq, ty = helper.vectorize_stories(test, word_idx, story_maxlen, query_maxlen)
     with tf.Graph().as_default() as graph:
         story_pl, question_pl, answer_pl, dropout_pl = get_placeholder(vocab_size, story_maxlen, query_maxlen)
-        rnn = model.RNN(FLAGS.rnn_cell, FLAGS.embed_dim, FLAGS.rnn_size, vocab_size)
+        rnn = model.RNN(rnn_cell, FLAGS.embed_dim, FLAGS.rnn_size, vocab_size)
         logits = rnn.inference(story_pl, question_pl, dropout_pl)
         loss = rnn.loss(logits, answer_pl)
         train_op = rnn.train(loss, FLAGS.init_learning_rate)
@@ -102,26 +102,21 @@ def train_process():
     :return:
     '''
     print_param()
+    rnn_cells = ['rnn', 'lstm', 'gru']
     prefixs = ['en', 'en-10k']
     tasks = [
-        'qa1_single-supporting-fact', 'qa2_two-supporting-facts', 'qa3_three-supporting-facts',
-        'qa4_two-arg-relations', 'qa5_three-arg-relations', 'qa6_yes-no-questions', 'qa7_counting',
-        'qa8_lists-sets', 'qa9_simple-negation', 'qa10_indefinite-knowledge',
-        'qa11_basic-coreference', 'qa12_conjunction', 'qa13_compound-coreference',
-        'qa14_time-reasoning', 'qa15_basic-deduction', 'qa16_basic-induction', 'qa17_positional-reasoning',
-        'qa18_size-reasoning', 'qa19_path-finding', 'qa20_agents-motivations'
+        'qa1_single-supporting-fact'
     ]
     suffix = '_{}.txt'
-    results = []
-    for prefix in prefixs:
-        for task in tasks:
-            challenge = 'tasks_1-20_v1-2/' + prefix + '/' + task + suffix
-            max_test_acc = train_and_test(challenge)
-            results.append((prefix, task, max_test_acc))
-
-    # 打印所有结果
-    for prefix, task, max_test_acc in results:
-        print FLAGS.rnn_cell, prefix, task, max_test_acc
+    with open('result.file', 'w') as result:
+        for rnn_cell in rnn_cells:
+            for prefix in prefixs:
+                for task in tasks:
+                    challenge = 'tasks_1-20_v1-2/' + prefix + '/' + task + suffix
+                    max_test_acc = train_and_test(challenge, rnn_cell)
+                    result.write(rnn_cell + '\t' + prefix + '\t' + task + '\t' + str(max_test_acc) + '\n')
+                    result.flush()
+        result.close
 
 
 if __name__ == "__main__":
