@@ -33,23 +33,30 @@ QA20 - Agent's Motivations   | 91               | 91.1  |96.9   |91
 
 sk Number                  | My LSTM | My GRU | My RNN
 ---                        | ---   | ---   | ---
-QA1 - Single Supporting Fact | 52.8  |99.2   |98.8
-QA2 - Two Supporting Facts   | 30.6  |43.9   |34
-QA3 - Three Supporting Facts | 23.6  |52.9   |21.9
-QA4 - Two Arg. Relations     | 70    |99.2   |99.2
-QA5 - Three Arg. Relations   | 56.9  |98.8   |89.1
-QA6 - yes/No Questions       | 52.5  |90.2   |79.7
-QA7 - Counting               | 77.5  |99     |89.1
-QA8 - Lists/Sets             | 73    |99.2   |77.4
-QA9 - Simple Negation        | 64.6  |99.2     |82.9
-QA10 - Indefinite Knowledge  | 48    |99.1   |75.9
-QA11 - Basic Coreference     | 76.4  |99.2   |81.2
-QA12 - Conjunction           | 75.9  |99.2     |99
+QA1 - Single Supporting Fact | 99.2  |99.2   |98.8
+QA2 - Two Supporting Facts   | 45.6  |43.9   |34
+QA3 - Three Supporting Facts | 23.1  |52.9   |21.9
+QA4 - Two Arg. Relations     | 99.2    |99.2   |99.2
+QA5 - Three Arg. Relations   | 98.1  |98.8   |89.1
+QA6 - yes/No Questions       | 49.4  |90.2   |79.7
+QA7 - Counting               | 92.3  |99     |89.1
+QA8 - Lists/Sets             | 76.3    |99.2   |77.4
+QA9 - Simple Negation        | 85.7  |99.2     |82.9
+QA10 - Indefinite Knowledge  | 43.1    |99.1   |75.9
+QA11 - Basic Coreference     | 99.2  |99.2   |81.2
+QA12 - Conjunction           | 99.2  |99.2     |99
 QA13 - Compound Coreference  | 93.6  |95.1   |93.6
-QA14 - Time Reasoning        | 22.9  |81.4   |33.2
-QA15 - Basic Deduction       | 21.1  |88.7   |33
-QA16 - Basic Induction       | 50.2  |49.8   |51.1
+QA14 - Time Reasoning        | 45.6  |81.4   |33.2
+QA15 - Basic Deduction       | 58.9  |88.7   |33
+QA16 - Basic Induction       | 50.5  |49.8   |51.1
 QA17 - Positional Reasoning  | 51.4  |62.3   |52.7
-QA18 - Size Reasoning        | 91.5  |97.2   |91.7
-QA19 - Path Finding          | 9.4   |42.1   |11.1
-QA20 - Agent's Motivations   | 91.1  |99.2   |92.3
+QA18 - Size Reasoning        | 92.1  |97.2   |91.7
+QA19 - Path Finding          | 8.7   |42.1   |11.1
+QA20 - Agent's Motivations   | 97.5  |99.2   |92.3
+
+
+3.结论
+
+通过实验对比，有以下经验结论：
+（1）以GRU为基础结构的RNN模型，对于bAbi模型也能取得比较好的结果(en-10k数据集下)；
+（2）对比三个RNN基础结构，即RNN，LSTM以及GRU，GRU在多个实验中效果显著好于其他RNN基础结构。从这点可以看出，在构建模型时更推荐使用GRU。
