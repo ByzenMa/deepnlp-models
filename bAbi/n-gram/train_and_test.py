@@ -4,12 +4,12 @@ import model
 import data_helper as helper
 
 # 模型超参
-tf.flags.DEFINE_float("init_learning_rate", 0.1, "initial learning rate")
+tf.flags.DEFINE_float("init_learning_rate", 0.01, "initial learning rate")
 tf.flags.DEFINE_float("gpu_fraction", 0.99, "gpu fraction")
 # 训练参数
 tf.flags.DEFINE_integer("batch_size", 32, "batch size")
 tf.flags.DEFINE_integer("glove_dim", 300, "glove dim size")
-tf.flags.DEFINE_integer("num_epochs", 40, "number epochs")
+tf.flags.DEFINE_integer("num_epochs", 200, "number epochs")
 FLAGS = tf.flags.FLAGS
 FLAGS._parse_flags()
 

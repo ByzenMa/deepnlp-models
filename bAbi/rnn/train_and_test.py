@@ -103,7 +103,7 @@ def train_process():
     '''
     print_param()
     rnn_cells = ['rnn', 'lstm', 'gru']
-    prefixs = ['en']
+    prefixs = ['en','en-10k']
     tasks = [
         'qa1_single-supporting-fact', 'qa2_two-supporting-facts', 'qa3_three-supporting-facts',
         'qa4_two-arg-relations', 'qa5_three-arg-relations', 'qa6_yes-no-questions', 'qa7_counting',
