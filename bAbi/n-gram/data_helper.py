@@ -138,7 +138,7 @@ def generate_data(batch_size, input, label, shuffle=True):
     :return:
     '''
     assert len(input) == len(label), \
-        "story, question和answer的长度不相等，请检查数据是否正确"
+        "story和answer的长度不相等，请检查数据是否正确"
     length = len(input)
     input_arry = np.array(input)
     label_arry = np.array(label)
