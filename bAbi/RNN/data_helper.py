@@ -6,7 +6,7 @@ import numpy as np
 
 SEED = 2017
 
-TAR_GZ = './data/babi_tasks_1-20_v1-2.tar.gz'
+TAR_GZ = '../data/babi_tasks_1-20_v1-2.tar.gz'
 
 
 def tokenize(sent):
