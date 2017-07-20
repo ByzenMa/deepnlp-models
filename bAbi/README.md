@@ -1,0 +1,1 @@
+复现[bAbi](https://arxiv.org/abs/1502.05698v1)模型。包括：n-gram，rnn，structured SVM以及MemNN
