@@ -11,7 +11,7 @@ nlp = spacy.load('en')
 
 def tokenize(sent):
     '''
-    对句子进行分词
+    对句子进行分词，并过滤掉停用词
     :param sent:要被解析的句子
     :return:
     '''
@@ -91,11 +91,17 @@ def extract_file(challenge):
 
 
 def get_vocab(train, test):
+    '''
+    获得词集合以及词到id的映射
+    :param train:
+    :param test:
+    :return:
+    '''
     vocab = set()
     for story, q, answer in train + test:
         vocab |= set(story + q + [answer])  # 对集合采用并操作('|')，与之对应，采用交操作('&')
     vocab = sorted(vocab)
-    word_idx = dict((c, i + 1) for i, c in enumerate(vocab))
+    word_idx = dict((c, i + 1) for i, c in enumerate(vocab))  # 对id=0进行了保留
     return vocab, word_idx
 
 
@@ -109,18 +115,43 @@ def vectorize_stories(data, word_idx):
     :return:
     '''
     xs = []
-    xqs = []
     ys = []
     for story, query, answer in data:
-        x = [word_idx[w] for w in story]
-        xq = [word_idx[w] for w in query]
+        x = nlp(unicode(' '.join(story))).vector
+        xq = nlp(unicode(' '.join(query))).vector
+        join = np.concatenate((x, xq))
         # let's not forget that index 0 is reserved
         y = np.zeros(len(word_idx) + 1)
         y[word_idx[answer]] = 1
-        xs.append(x)
-        xqs.append(xq)
+        xs.append(join)
         ys.append(y)
-    pass
+    return xs, ys
+
+
+def generate_data(batch_size, input, label, shuffle=True):
+    '''
+    生成迭代器
+    :param batch_size:
+    :param input:
+    :param label:
+    :param shuffle:
+    :return:
+    '''
+    assert len(input) == len(label), \
+        "story, question和answer的长度不相等，请检查数据是否正确"
+    length = len(input)
+    input_arry = np.array(input)
+    label_arry = np.array(label)
+    if shuffle:
+        np.random.seed(SEED)
+        idx = np.random.permutation(length)
+        input_arry = input_arry[idx]
+        label_arry = label_arry[idx]
+    total_batch = int(length / batch_size)
+    input_arry_list = np.split(input_arry[:total_batch * batch_size], total_batch, 0)
+    label_arry_list = np.split(label_arry[:total_batch * batch_size], total_batch, 0)
+    for i in range(total_batch):
+        yield input_arry_list[i], label_arry_list[i]
 
 
 if __name__ == "__main__":
@@ -134,4 +165,6 @@ if __name__ == "__main__":
 
     challenge = 'tasks_1-20_v1-2/en/qa1_single-supporting-fact_{}.txt'
     train, test = extract_file(challenge)
-    print train[0:4]
+    _, word_idx = get_vocab(train, test)
+    xs, ys = vectorize_stories(train, word_idx)
+    print len(xs), len(ys)
