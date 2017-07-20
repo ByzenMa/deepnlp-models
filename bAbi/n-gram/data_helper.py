@@ -16,7 +16,7 @@ def tokenize(sent):
     :return:
     '''
     split = [x.strip() for x in re.split('(\W+)?', sent) if x.strip() not in spacy.en.language_data.STOP_WORDS]
-    return [word for word in split if len(word) > 0]
+    return [word.lower() for word in split if len(word) > 0]
 
 
 def parse_stories(lines, only_supporting=False):
