@@ -28,7 +28,7 @@ class S2S(object):
         构建s2s模型，得到解码的训练输出和测试输出
         '''
         _, final_state = self.encoding_layer()
-        target_data_processed = self.process_decoder_input(self.target_data, self.target_vocab_to_int, self.batch_size)
+        target_data_processed = self.process_decoder_input()
         training_decoder_output, inference_decoder_output = self.decoding_layer(target_data_processed, final_state)
         return training_decoder_output, inference_decoder_output
 
@@ -36,8 +36,8 @@ class S2S(object):
         '''
         编码过程，采用LSTM进行编码，并将输出结果和隐层信息返回
         '''
-        embed_input = tf.contrib.layers.embed_sequence(self.rnn_inputs, self.source_vocab_size,
-                                                       self.encoding_embedding_size)
+        embed_input = tf.contrib.layers.embed_sequence(self.input_data, self.source_vocab_size,
+                                                       self.enc_embedding_size)
 
         def build_cell(lstm_size):
             cell = tf.contrib.rnn.LSTMCell(lstm_size, initializer=tf.random_uniform_initializer(-0.1, 0.1, seed=2))
@@ -63,7 +63,7 @@ class S2S(object):
         '''
         解码过程，在训练和测试阶段采用不同的方式
         '''
-        dec_embeddings = tf.Variable(tf.random_uniform([self.target_vocab_size, self.decoding_embedding_size]))
+        dec_embeddings = tf.Variable(tf.random_uniform([self.target_vocab_size, self.dec_embedding_size]))
         dec_embed_input = tf.nn.embedding_lookup(dec_embeddings, dec_input)
 
         def make_cell(rnn_size):
@@ -125,7 +125,7 @@ class S2S(object):
         '''
         training_logits = tf.identity(training_decoder_output.rnn_output, name='logits')
         inference_logits = tf.identity(inference_decoder_output.sample_id, name='predictions')
-        masks = tf.sequence_mask(self.target_sequence_length, self.max_target_sequence_length, dtype=tf.float32,
+        masks = tf.sequence_mask(self.target_sequence_length, self.max_target_sentence_length, dtype=tf.float32,
                                  name='masks')
         cost = tf.contrib.seq2seq.sequence_loss(training_logits, self.target_data, masks)
         return cost, inference_logits

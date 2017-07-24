@@ -19,6 +19,9 @@ tf.flags.DEFINE_integer("num_epochs", 10, "number epochs")
 tf.flags.DEFINE_integer("decay_step", 10, "number epochs")
 tf.flags.DEFINE_integer("display_step", 200, "display step")
 tf.flags.DEFINE_float("decay_rate", 0.99, "gpu fraction")
+tf.flags.DEFINE_string("save_path", 'checkpoints/dev', "save path")
+tf.flags.DEFINE_string("source_path", 'data/small_vocab_en', "source path")
+tf.flags.DEFINE_string("target_path", 'data/small_vocab_fr', "target path")
 FLAGS = tf.flags.FLAGS
 FLAGS._parse_flags()
 
@@ -66,9 +69,14 @@ def model_inputs():
 
 
 def train():
-    save_path = 'checkpoints/dev'
+    save_path = FLAGS.save_path
+    if not tf.gfile.Exists(helper.PREPROCESS_DATA):
+        print '预处理文件不存在，重新生成预处理文件并存入：{}'.format(helper.PREPROCESS_DATA)
+        helper.preprocess_and_save_data(FLAGS.source_path, FLAGS.target_path)
+
     (source_int_text, target_int_text), (source_vocab_to_int, target_vocab_to_int), _ = helper.load_preprocess()
-    max_target_sentence_length = max([len(sentence) for sentence in source_int_text])
+    print '训练数据加载成功'
+
     train_graph = tf.Graph()
     with train_graph.as_default():
         input_data, targets, lr, keep_prob, target_sequence_length, \
@@ -92,65 +100,65 @@ def train():
         # 获得损失和
         cost, inference_logits = m.loss(training_decoder_output, inference_decoder_output)
         train_op = m.train(cost, lr)
-        accuary = m.accuary(inference_logits)
+
         # Split data to training and validation sets
+        batch_size = FLAGS.batch_size
+        train_source = source_int_text[batch_size:]
+        train_target = target_int_text[batch_size:]
+        valid_source = source_int_text[:batch_size]
+        valid_target = target_int_text[:batch_size]
+        (valid_sources_batch, valid_targets_batch, valid_sources_lengths, valid_targets_lengths) = next(
+            get_batches(valid_source,
+                        valid_target,
+                        batch_size,
+                        source_vocab_to_int['<PAD>'],
+                        target_vocab_to_int['<PAD>']))
+        with tf.Session(graph=train_graph) as sess:
+            sess.run(tf.global_variables_initializer())
 
-    batch_size = FLAGS.batch_size
-    train_source = source_int_text[batch_size:]
-    train_target = target_int_text[batch_size:]
-    valid_source = source_int_text[:batch_size]
-    valid_target = target_int_text[:batch_size]
-    (valid_sources_batch, valid_targets_batch, valid_sources_lengths, valid_targets_lengths) = next(
-        get_batches(valid_source,
-                    valid_target,
-                    batch_size,
-                    source_vocab_to_int['<PAD>'],
-                    target_vocab_to_int['<PAD>']))
-    with tf.Session(graph=train_graph) as sess:
-        sess.run(tf.global_variables_initializer())
+            for epoch_i in range(FLAGS.num_epochs):
+                for batch_i, (source_batch, target_batch, sources_lengths, targets_lengths) in enumerate(
+                        get_batches(train_source, train_target, batch_size,
+                                    source_vocab_to_int['<PAD>'],
+                                    target_vocab_to_int['<PAD>'])):
 
-        for epoch_i in range(FLAGS.epochs):
-            for batch_i, (source_batch, target_batch, sources_lengths, targets_lengths) in enumerate(
-                    get_batches(train_source, train_target, batch_size,
-                                source_vocab_to_int['<PAD>'],
-                                target_vocab_to_int['<PAD>'])):
-
-                _, loss = sess.run(
-                    [train_op, cost],
-                    {input_data: source_batch,
-                     targets: target_batch,
-                     lr: FLAGS.init_learning_rate,
-                     target_sequence_length: targets_lengths,
-                     source_sequence_length: sources_lengths,
-                     keep_prob: FLAGS.dropout})
-
-                if batch_i % FLAGS.display_step == 0 and batch_i > 0:
-                    batch_train_logits = sess.run(
-                        inference_logits,
+                    _, loss = sess.run(
+                        [train_op, cost],
                         {input_data: source_batch,
-                         source_sequence_length: sources_lengths,
+                         targets: target_batch,
+                         lr: FLAGS.init_learning_rate,
                          target_sequence_length: targets_lengths,
-                         keep_prob: 1.0})
+                         source_sequence_length: sources_lengths,
+                         keep_prob: FLAGS.dropout})
 
-                    batch_valid_logits = sess.run(
-                        inference_logits,
-                        {input_data: valid_sources_batch,
-                         source_sequence_length: valid_sources_lengths,
-                         target_sequence_length: valid_targets_lengths,
-                         keep_prob: 1.0})
+                    if batch_i % FLAGS.display_step == 0 and batch_i > 0:
+                        batch_train_logits = sess.run(
+                            inference_logits,
+                            {input_data: source_batch,
+                             source_sequence_length: sources_lengths,
+                             target_sequence_length: targets_lengths,
+                             keep_prob: 1.0})
 
-                    train_acc = m.accuary(target_batch, batch_train_logits)
+                        batch_valid_logits = sess.run(
+                            inference_logits,
+                            {input_data: valid_sources_batch,
+                             source_sequence_length: valid_sources_lengths,
+                             target_sequence_length: valid_targets_lengths,
+                             keep_prob: 1.0})
 
-                valid_acc = m.accuracy(valid_targets_batch, batch_valid_logits)
+                        train_acc = m.accuary(target_batch, batch_train_logits)
 
-                print(
-                    'Epoch {:>3} Batch {:>4}/{} - Train Accuracy: {:>6.4f}, Validation Accuracy: {:>6.4f}, Loss: {:>6.4f}'
-                        .format(epoch_i, batch_i, len(source_int_text) // batch_size, train_acc, valid_acc, loss))
+                        valid_acc = m.accuary(valid_targets_batch, batch_valid_logits)
 
-    # Save Model
-    saver = tf.train.Saver()
-    saver.save(sess, save_path)
-    print('Model Trained and Saved')
+                        print(
+                            'Epoch {:>3} Batch {:>4}/{} - Train Accuracy: {:>6.4f}, Validation Accuracy: {:>6.4f}, Loss: {:>6.4f}'
+                                .format(epoch_i, batch_i, len(source_int_text) // batch_size, train_acc, valid_acc,
+                                        loss))
+
+            # Save Model
+            saver = tf.train.Saver()
+            saver.save(sess, save_path)
+            print('Model Trained and Saved')
 
 
 if __name__ == '__main__':
