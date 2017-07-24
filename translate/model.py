@@ -1,3 +1,4 @@
+# encoding=utf-8
 import tensorflow as tf
 from tensorflow.python.layers.core import Dense
 import numpy as np
@@ -139,15 +140,15 @@ class S2S(object):
         train_op = optimizer.apply_gradients(capped_gradients)
         return train_op
 
-    def accuary(self, logits):
+    def accuary(self, target, logits):
         """
         计算准确率
         """
-        max_seq = max(self.target_data.shape[1], logits.shape[1])
-        if max_seq - self.target_data.shape[1]:
+        max_seq = max(target.shape[1], logits.shape[1])
+        if max_seq - target.shape[1]:
             target = np.pad(
-                self.target_data,
-                [(0, 0), (0, max_seq - self.target_data.shape[1])],
+                target,
+                [(0, 0), (0, max_seq - target.shape[1])],
                 'constant')
         if max_seq - logits.shape[1]:
             logits = np.pad(
