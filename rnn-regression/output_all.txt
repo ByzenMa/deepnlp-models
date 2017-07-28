@@ -1,0 +1,1029 @@
+nohup: ignoring input
+2017-07-27 22:49:58.507694: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-27 22:49:58.507719: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-27 22:49:58.507724: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-27 22:49:58.507727: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-27 22:49:58.507730: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-27 22:49:59.202433: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties: 
+name: GeForce GTX 1080
+major: 6 minor: 1 memoryClockRate (GHz) 1.7335
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 7.81GiB
+2017-07-27 22:49:59.202463: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 
+2017-07-27 22:49:59.202468: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y 
+2017-07-27 22:49:59.202475: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080, pci bus id: 0000:01:00.0)
+2017-07-27 22:49:59.737953: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3687 get requests, put_count=3662 evicted_count=1000 eviction_rate=0.273075 and unsatisfied allocation rate=0.305126
+2017-07-27 22:49:59.737986: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:259] Raising pool_size_limit_ from 100 to 110
+pickle文件不存在，处理数据并存储在data/credit.pckl
+共有数据126037条
+存在不包含12个月的数据，进行数据清洗
+X_train shape: (9378, 12, 92)
+y_train shape: (9378, 1)
+X_test shape: (1043, 12, 92)
+y_test shape: (1043, 1)
+Eopch  0   lr=0.001000   train_loss=189.213   test_loss=231.159    min_test_loss=231.159
+Eopch  1   lr=0.001000   train_loss=173.590   test_loss=221.046    min_test_loss=221.046
+Eopch  2   lr=0.001000   train_loss=167.971   test_loss=208.700    min_test_loss=208.700
+Eopch  3   lr=0.001000   train_loss=164.379   test_loss=204.832    min_test_loss=204.832
+Eopch  4   lr=0.001000   train_loss=162.291   test_loss=203.797    min_test_loss=203.797
+Eopch  5   lr=0.001000   train_loss=160.707   test_loss=202.495    min_test_loss=202.495
+Eopch  6   lr=0.001000   train_loss=160.242   test_loss=200.573    min_test_loss=200.573
+Eopch  7   lr=0.001000   train_loss=158.941   test_loss=198.562    min_test_loss=198.562
+Eopch  8   lr=0.001000   train_loss=158.606   test_loss=200.343    min_test_loss=198.562
+Eopch  9   lr=0.001000   train_loss=157.905   test_loss=196.059    min_test_loss=196.059
+Eopch 10   lr=0.001000   train_loss=156.326   test_loss=199.149    min_test_loss=196.059
+Eopch 11   lr=0.001000   train_loss=158.058   test_loss=202.377    min_test_loss=196.059
+Eopch 12   lr=0.001000   train_loss=156.386   test_loss=196.015    min_test_loss=196.015
+Eopch 13   lr=0.001000   train_loss=154.335   test_loss=193.513    min_test_loss=193.513
+Eopch 14   lr=0.001000   train_loss=154.000   test_loss=192.939    min_test_loss=192.939
+Eopch 15   lr=0.001000   train_loss=152.661   test_loss=197.016    min_test_loss=192.939
+Eopch 16   lr=0.001000   train_loss=154.288   test_loss=195.141    min_test_loss=192.939
+Eopch 17   lr=0.001000   train_loss=152.514   test_loss=189.173    min_test_loss=189.173
+Eopch 18   lr=0.001000   train_loss=151.066   test_loss=191.674    min_test_loss=189.173
+Eopch 19   lr=0.001000   train_loss=152.114   test_loss=193.233    min_test_loss=189.173
+Eopch 20   lr=0.001000   train_loss=152.599   test_loss=186.872    min_test_loss=186.872
+Eopch 21   lr=0.001000   train_loss=149.778   test_loss=192.548    min_test_loss=186.872
+Eopch 22   lr=0.001000   train_loss=152.238   test_loss=203.045    min_test_loss=186.872
+Eopch 23   lr=0.001000   train_loss=148.642   test_loss=200.607    min_test_loss=186.872
+Eopch 24   lr=0.001000   train_loss=150.495   test_loss=205.317    min_test_loss=186.872
+Eopch 25   lr=0.001000   train_loss=151.143   test_loss=195.096    min_test_loss=186.872
+Eopch 26   lr=0.001000   train_loss=149.136   test_loss=190.978    min_test_loss=186.872
+Eopch 27   lr=0.001000   train_loss=148.597   test_loss=194.070    min_test_loss=186.872
+Eopch 28   lr=0.001000   train_loss=149.214   test_loss=188.353    min_test_loss=186.872
+Eopch 29   lr=0.001000   train_loss=150.787   test_loss=203.255    min_test_loss=186.872
+Eopch 30   lr=0.001000   train_loss=151.428   test_loss=196.388    min_test_loss=186.872
+Eopch 31   lr=0.001000   train_loss=151.343   test_loss=201.932    min_test_loss=186.872
+Eopch 32   lr=0.001000   train_loss=147.819   test_loss=215.467    min_test_loss=186.872
+Eopch 33   lr=0.001000   train_loss=148.952   test_loss=206.169    min_test_loss=186.872
+Eopch 34   lr=0.001000   train_loss=146.628   test_loss=200.983    min_test_loss=186.872
+Eopch 35   lr=0.001000   train_loss=148.080   test_loss=208.796    min_test_loss=186.872
+Eopch 36   lr=0.001000   train_loss=146.581   test_loss=201.356    min_test_loss=186.872
+Eopch 37   lr=0.001000   train_loss=142.904   test_loss=217.466    min_test_loss=186.872
+Eopch 38   lr=0.001000   train_loss=146.721   test_loss=200.556    min_test_loss=186.872
+Eopch 39   lr=0.001000   train_loss=147.771   test_loss=205.861    min_test_loss=186.872
+Eopch 40   lr=0.001000   train_loss=146.517   test_loss=235.626    min_test_loss=186.872
+Eopch 41   lr=0.001000   train_loss=146.139   test_loss=210.157    min_test_loss=186.872
+Eopch 42   lr=0.000990   train_loss=142.967   test_loss=197.206    min_test_loss=186.872
+Eopch 43   lr=0.00092017-07-27 22:50:52.940814: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3326724 get requests, put_count=3326725 evicted_count=2000 eviction_rate=0.000601192 and unsatisfied allocation rate=0.000607204
+80   train_loss=143.599   test_loss=200.386    min_test_loss=186.872
+Eopch 44   lr=0.000970   train_loss=143.426   test_loss=215.165    min_test_loss=186.872
+Eopch 45   lr=0.000961   train_loss=145.839   test_loss=213.840    min_test_loss=186.872
+Eopch 46   lr=0.000951   train_loss=142.580   test_loss=218.368    min_test_loss=186.872
+Eopch 47   lr=0.000941   train_loss=144.524   test_loss=213.546    min_test_loss=186.872
+Eopch 48   lr=0.000932   train_loss=141.089   test_loss=196.100    min_test_loss=186.872
+Eopch 49   lr=0.000923   train_loss=136.058   test_loss=220.408    min_test_loss=186.872
+Eopch 50   lr=0.000914   train_loss=143.018   test_loss=192.269    min_test_loss=186.872
+Eopch 51   lr=0.000904   train_loss=142.726   test_loss=206.998    min_test_loss=186.872
+Eopch 52   lr=0.000895   train_loss=133.338   test_loss=207.207    min_test_loss=186.872
+Eopch 53   lr=0.000886   train_loss=142.189   test_loss=217.811    min_test_loss=186.872
+Eopch 54   lr=0.000878   train_loss=137.226   test_loss=222.408    min_test_loss=186.872
+Eopch 55   lr=0.000869   train_loss=137.860   test_loss=205.992    min_test_loss=186.872
+Eopch 56   lr=0.000860   train_loss=138.707   test_loss=190.910    min_test_loss=186.872
+Eopch 57   lr=0.000851   train_loss=140.277   test_loss=187.184    min_test_loss=186.872
+Eopch 58   lr=0.000843   train_loss=138.639   test_loss=202.341    min_test_loss=186.872
+Eopch 59   lr=0.000835   train_loss=137.346   test_loss=186.597    min_test_loss=186.597
+Eopch 60   lr=0.000835   train_loss=134.715   test_loss=187.399    min_test_loss=186.597
+Eopch 61   lr=0.000835   train_loss=136.520   test_loss=199.048    min_test_loss=186.597
+Eopch 62   lr=0.000835   train_loss=136.870   test_loss=212.306    min_test_loss=186.597
+Eopch 63   lr=0.000835   train_loss=135.465   test_loss=192.377    min_test_loss=186.597
+Eopch 64   lr=0.000835   train_loss=136.067   test_loss=193.549    min_test_loss=186.597
+Eopch 65   lr=0.000835   train_loss=134.133   test_loss=194.854    min_test_loss=186.597
+Eopch 66   lr=0.000835   train_loss=131.562   test_loss=198.713    min_test_loss=186.597
+Eopch 67   lr=0.000835   train_loss=134.135   test_loss=221.837    min_test_loss=186.597
+Eopch 68   lr=0.000835   train_loss=132.951   test_loss=196.479    min_test_loss=186.597
+Eopch 69   lr=0.000835   train_loss=130.346   test_loss=186.492    min_test_loss=186.492
+Eopch 70   lr=0.000835   train_loss=132.843   test_loss=198.068    min_test_loss=186.492
+Eopch 71   lr=0.000835   train_loss=133.907   test_loss=227.249    min_test_loss=186.492
+Eopch 72   lr=0.000835   train_loss=131.386   test_loss=232.790    min_test_loss=186.492
+Eopch 73   lr=0.000835   train_loss=132.261   test_loss=221.368    min_test_loss=186.492
+Eopch 74   lr=0.000835   train_loss=132.796   test_loss=189.446    min_test_loss=186.492
+Eopch 75   lr=0.000835   train_loss=132.365   test_loss=213.576    min_test_loss=186.492
+Eopch 76   lr=0.000835   train_loss=133.647   test_loss=190.503    min_test_loss=186.492
+Eopch 77   lr=0.000835   train_loss=125.875   test_loss=207.779    min_test_loss=186.492
+Eopch 78   lr=0.000835   train_loss=131.324   test_loss=215.756    min_test_loss=186.492
+Eopch 79   lr=0.000835   train_loss=129.554   test_loss=196.363    min_test_loss=186.492
+Eopch 80   lr=0.000835   train_loss=128.617   test_loss=202.259    min_test_loss=186.492
+Eopch 81   lr=0.000835   train_loss=136.757   test_loss=201.004    min_test_loss=186.492
+Eopch 82   lr=0.000835   train_loss=129.104   test_loss=196.250    min_test_loss=186.492
+Eopch 83   lr=0.000835   train_loss=128.910   test_loss=199.187    min_test_loss=186.492
+Eopch 84   lr=0.000835   train_loss=131.378   test_loss=227.329    min_test_loss=186.492
+Eopch 85   lr=0.000835   train_loss=129.650   test_loss=209.636    min_test_loss=186.492
+Eopch 86   lr=0.000835   train_loss=128.463   test_loss=208.904    min_test_loss=186.492
+Eopch 87   lr=0.000835   train_loss=124.466   test_loss=196.328    min_test_loss=186.492
+Eopch 88   lr=0.000835   train_loss=128.663   test_loss=201.056    min_test_loss=186.492
+Eopch 89   lr=0.000835   train_loss=132.514   test_loss=232.486    min_test_loss=186.492
+Eopch 90   lr=0.000835   train_loss=128.358   test_loss=189.658    min_test_loss=186.492
+Eopch 91   lr=0.000826   train_loss=125.294   test_loss=200.428    min_test_loss=186.492
+Eopch 92   lr=0.000818   train_loss=127.206   test_loss=224.477    min_test_loss=186.492
+Eopch 93   lr=0.000810   train_loss=124.314   test_loss=196.799    min_test_loss=186.492
+Eopch 94   lr=0.000802   train_loss=121.028   test_loss=201.663    min_test_loss=186.492
+Eopch 95   lr=0.000794   train_loss=121.319   test_loss=195.284    min_test_loss=186.492
+Eopch 96   lr=0.000786   train_loss=123.952   test_loss=188.379    min_test_loss=186.492
+Eopch 97   lr=0.000778   train_loss=128.916   test_loss=197.491    min_test_loss=186.492
+Eopch 98   lr=0.000770   train_loss=127.638   test_loss=195.861    min_test_loss=186.492
+Eopch 99   lr=0.000762   train_loss=120.870   test_loss=204.370    min_test_loss=186.492
+Eopch100   lr=0.000755   train_loss=130.521   test_loss=190.487    min_test_loss=186.492
+Eopch101   lr=0.000747   train_loss=119.531   test_loss=186.861    min_test_loss=186.492
+Eopch102   lr=0.000740   train_loss=128.918   test_loss=186.779    min_test_loss=186.492
+Eopch103   lr=0.000732   train_loss=121.252   test_loss=197.227    min_test_loss=186.492
+Eopch104   lr=0.000725   train_loss=123.681   test_loss=200.928    min_test_loss=186.492
+Eopch105   lr=0.000718   train_loss=125.308   test_loss=198.853    min_test_loss=186.492
+Eopch106   lr=0.000711   train_loss=116.035   test_loss=198.787    min_test_loss=186.492
+Eopch107   lr=0.000703   train_loss=121.050   test_loss=196.644    min_test_loss=186.492
+Eopch108   lr=0.000696   train_loss=121.226   test_loss=193.525    min_test_loss=186.492
+Eopch109   lr=0.000689   train_loss=119.697   test_loss=194.584    min_test_loss=186.492
+Eopch110   lr=0.000683   train_loss=118.676   test_loss=193.181    min_test_loss=186.492
+Eopch111   lr=0.000676   train_loss=121.770   test_loss=198.435    min_test_loss=186.492
+Eopch112   lr=0.000669   train_loss=119.419   test_loss=198.803    min_test_loss=186.492
+Eopch113   lr=0.000662   train_loss=122.257   test_loss=191.430    min_test_loss=186.492
+Eopch114   lr=0.000656   train_loss=121.173   test_loss=197.625    min_test_loss=186.492
+Eopch115   lr=0.000649   train_loss=120.531   test_loss=193.894    min_test_loss=186.492
+Eopch116   lr=0.000643   train_loss=114.695   test_loss=198.082    min_test_loss=186.492
+Eopch117   lr=0.000636   train_loss=122.349   test_loss=194.784    min_test_loss=186.492
+Eopch118   lr=0.000630   train_loss=115.697   test_loss=192.115    min_test_loss=186.492
+Eopch119   lr=0.000624   train_loss=115.769   test_loss=184.690    min_test_loss=184.690
+Eopch120   lr=0.000624   train_loss=117.184   test_loss=205.372    min_test_loss=184.690
+Eopch121   lr=0.000624   train_loss=118.524   test_loss=216.578    min_test_loss=184.690
+Eopch122   lr=0.000624   train_loss=116.799   test_loss=193.035    min_test_loss=184.690
+Eopch123   lr=0.000624   train_loss=115.182   test_loss=192.123    min_test_loss=184.690
+Eopch124   lr=0.000624   train_loss=112.352   test_loss=193.832    min_test_loss=184.690
+Eopch125   lr=0.000624   train_loss=117.881   test_loss=188.009    min_test_loss=184.690
+Eopch126   lr=0.000624   train_loss=118.455   test_loss=190.904    min_test_loss=184.690
+Eopch127   lr=0.000624   train_loss=118.322   test_loss=197.390    min_test_loss=184.690
+Eopch128   lr=0.000624   train_loss=112.366   test_loss=189.853    min_test_loss=184.690
+Eopch129   lr=0.000624   train_loss=115.189   test_loss=200.083    min_test_loss=184.690
+Eopch130   lr=0.000624   train_loss=113.975   test_loss=197.780    min_test_loss=184.690
+Eopch131   lr=0.000624   train_loss=115.394   test_loss=203.899    min_test_loss=184.690
+Eopch132   lr=0.000624   train_loss=111.231   test_loss=193.862    min_test_loss=184.690
+Eopch133   lr=0.000624   train_loss=117.039   test_loss=194.821    min_test_loss=184.690
+Eopch134   lr=0.000624   train_loss=114.201   test_loss=213.240    min_test_loss=184.690
+Eopch135   lr=0.000624   train_loss=108.294   test_loss=206.872    min_test_loss=184.690
+Eopch136   lr=0.000624   train_loss=114.888   test_loss=203.185    min_test_loss=184.690
+Eopch137   lr=0.000624   train_loss=112.516   test_loss=200.925    min_test_loss=184.690
+Eopch138   lr=0.000624   train_loss=114.119   test_loss=195.483    min_test_loss=184.690
+Eopch139   lr=0.000624   train_loss=110.968   test_loss=202.152    min_test_loss=184.690
+Eopch140   lr=0.000624   train_loss=113.982   test_loss=200.934    min_test_loss=184.690
+Eopch141   lr=0.000617   train_loss=116.899   test_loss=199.420    min_test_loss=184.690
+Eopch142   lr=0.000611   train_loss=115.296   test_loss=190.060    min_test_loss=184.690
+Eopch143   lr=0.000605   train_loss=109.906   test_loss=194.391    min_test_loss=184.690
+Eopch144   lr=0.000599   train_loss=113.308   test_loss=199.550    min_test_loss=184.690
+Eopch145   lr=0.000593   train_loss=110.471   test_loss=190.104    min_test_loss=184.690
+Eopch146   lr=0.000587   train_loss=115.630   test_loss=201.538    min_test_loss=184.690
+Eopch147   lr=0.000581   train_loss=117.146   test_loss=202.171    min_test_loss=184.690
+Eopch148   lr=0.000575   train_loss=115.627   test_loss=200.980    min_test_loss=184.690
+Eopch149   lr=0.000570   train_loss=111.456   test_loss=198.981    min_test_loss=184.690
+Eopch150   lr=0.000564   train_loss=111.699   test_loss=197.596    min_test_loss=184.690
+Eopch151   lr=0.000558   train_loss=111.703   test_loss=197.759    min_test_loss=184.690
+Eopch152   lr=0.000553   train_loss=110.549   test_loss=205.562    min_test_loss=184.690
+Eopch153   lr=0.000547   train_loss=111.854   test_loss=200.926    min_test_loss=184.690
+Eopch154   lr=0.000542   train_loss=111.475   test_loss=198.903    min_test_loss=184.690
+Eopch155   lr=0.000536   train_loss=116.345   test_loss=201.940    min_test_loss=184.690
+Eopch156   lr=0.000531   train_loss=111.809   test_loss=189.455    min_test_loss=184.690
+Eopch157   lr=0.000526   train_loss=114.265   test_loss=193.583    min_test_loss=184.690
+Eopch158   lr=0.000520   train_loss=110.543   test_loss=200.618    min_test_loss=184.690
+Eopch159   lr=0.000515   train_loss=108.827   test_loss=203.393    min_test_loss=184.690
+Eopch160   lr=0.000510   train_loss=108.762   test_loss=197.982    min_test_loss=184.690
+Eopch161   lr=0.000505   train_loss=107.805   test_loss=196.530    min_test_loss=184.690
+Eopch162   lr=0.000500   train_loss=103.766   test_loss=191.540    min_test_loss=184.690
+Eopch163   lr=0.000495   train_loss=107.526   test_loss=211.780    min_test_loss=184.690
+Eopch164   lr=0.000490   train_loss=104.853   test_loss=192.657    min_test_loss=184.690
+Eopch165   lr=0.000485   train_loss=104.367   test_loss=192.812    min_test_loss=184.690
+Eopch166   lr=0.000480   train_loss=104.240   test_loss=197.773    min_test_loss=184.690
+Eopch167   lr=0.000475   train_loss=106.751   test_loss=197.118    min_test_loss=184.690
+Eopch168   lr=0.000471   train_loss=108.130   test_loss=190.299    min_test_loss=184.690
+Eopch169   lr=0.000466   train_loss=102.497   test_loss=198.507    min_test_loss=184.690
+Eopch170   lr=0.000461   train_loss=108.142   test_loss=192.587    min_test_loss=184.690
+Eopch171   lr=0.000457   train_loss=109.804   test_loss=191.180    min_test_loss=184.690
+Eopch172   lr=0.000452   train_loss=108.467   test_loss=192.130    min_test_loss=184.690
+Eopch173   lr=0.000448   train_loss=108.134   test_loss=198.274    min_test_loss=184.690
+Eopch174   lr=0.000443   train_loss=102.712   test_loss=190.893    min_test_loss=184.690
+Eopch175   lr=0.000439   train_loss=110.366   test_loss=201.540    min_test_loss=184.690
+Eopch176   lr=0.000434   train_loss=101.759   test_loss=190.915    min_test_loss=184.690
+Eopch177   lr=0.000430   train_loss=102.327   test_loss=197.530    min_test_loss=184.690
+Eopch178   lr=0.000426   train_loss=105.240   test_loss=188.690    min_test_loss=184.690
+Eopch179   lr=0.000421   train_loss=100.046   test_loss=195.195    min_test_loss=184.690
+Eopch180   lr=0.000417   train_loss=103.285   test_loss=197.698    min_test_loss=184.690
+Eopch181   lr=0.000413   train_loss=107.702   test_loss=190.518    min_test_loss=184.690
+Eopch182   lr=0.000409   train_loss=104.937   test_loss=193.698    min_test_loss=184.690
+Eopch183   lr=0.000405   train_loss=107.436   test_loss=193.409    min_test_loss=184.690
+Eopch184   lr=0.000401   train_loss=109.836   test_loss=188.672    min_test_loss=184.690
+Eopch185   lr=0.000397   train_loss=105.219   test_loss=194.713    min_test_loss=184.690
+Eopch186   lr=0.000393   train_loss=111.205   test_loss=208.243    min_test_loss=184.690
+Eopch187   lr=0.000389   train_loss=105.376   test_loss=186.704    min_test_loss=184.690
+Eopch188   lr=0.000385   train_loss=97.200   test_loss=192.728    min_test_loss=184.690
+Eopch189   lr=0.000381   train_loss=103.614   test_loss=196.928    min_test_loss=184.690
+Eopch190   lr=0.000377   train_loss=102.341   test_loss=190.143    min_test_loss=184.690
+Eopch191   lr=0.000373   train_loss=103.983   test_loss=190.131    min_test_loss=184.690
+Eopch192   lr=0.000370   train_loss=99.066   test_loss=191.883    min_test_loss=184.690
+Eopch193   lr=0.000366   train_loss=105.980   test_loss=188.265    min_test_loss=184.690
+Eopch194   lr=0.000362   train_loss=102.300   test_loss=190.832    min_test_loss=184.690
+Eopch195   lr=0.000359   train_loss=104.292   test_loss=190.217    min_test_loss=184.690
+Eopch196   lr=0.000355   train_loss=99.887   test_loss=183.929    min_test_loss=183.929
+Eopch197   lr=0.000355   train_loss=103.348   test_loss=201.222    min_test_loss=183.929
+Eopch198   lr=0.000355   train_loss=101.683   test_loss=192.340    min_test_loss=183.929
+Eopch199   lr=0.000355   train_loss=105.536   test_loss=199.861    min_test_loss=183.929
+Eopch200   lr=0.000355   train_loss=102.651   test_loss=198.857    min_test_loss=183.929
+Eopch201   lr=0.000355   train_loss=105.198   test_loss=193.188    min_test_loss=183.929
+Eopch202   lr=0.000355   train_loss=103.535   test_loss=192.563    min_test_loss=183.929
+Eopch203   lr=0.000355   train_loss=101.969   test_loss=198.128    min_test_loss=183.929
+Eopch204   lr=0.000355   train_loss=102.234   test_loss=195.709    min_test_loss=183.929
+Eopch205   lr=0.000355   train_loss=102.569   test_loss=196.738    min_test_loss=183.929
+Eopch206   lr=0.000355   train_loss=103.008   test_loss=198.892    min_test_loss=183.929
+Eopch207   lr=0.000355   train_loss=101.686   test_loss=188.391    min_test_loss=183.929
+Eopch208   lr=0.000355   train_loss=105.544   test_loss=191.293    min_test_loss=183.929
+Eopch209   lr=0.000355   train_loss=103.793   test_loss=193.595    min_test_loss=183.929
+Eopch210   lr=0.000355   train_loss=102.881   test_loss=189.230    min_test_loss=183.929
+Eopch211   lr=0.000355   train_loss=101.946   test_loss=203.647    min_test_loss=183.929
+Eopch212   lr=0.000355   train_loss=101.832   test_loss=197.732    min_test_loss=183.929
+Eopch213   lr=0.000355   train_loss=104.329   test_loss=192.052    min_test_loss=183.929
+Eopch214   lr=0.000355   train_loss=97.388   test_loss=188.046    min_test_loss=183.929
+Eopch215   lr=0.000355   train_loss=103.163   test_loss=192.100    min_test_loss=183.929
+Eopch216   lr=0.000355   train_loss=102.176   test_loss=189.742    min_test_loss=183.929
+Eopch217   lr=0.000355   train_loss=102.091   test_loss=195.081    min_test_loss=183.929
+Eopch218   lr=0.000352   train_loss=99.523   test_loss=201.820    min_test_loss=183.929
+Eopch219   lr=0.000348   train_loss=98.056   test_loss=196.664    min_test_loss=183.929
+Eopch220   lr=0.000345   train_loss=108.044   test_loss=202.875    min_test_loss=183.929
+Eopch221   lr=0.000341   train_loss=102.780   test_loss=192.825    min_test_loss=183.929
+Eopch222   lr=0.000338   train_loss=101.050   test_loss=186.456    min_test_loss=183.929
+Eopch223   lr=0.000334   train_loss=98.096   test_loss=203.822    min_test_loss=183.929
+Eopch224   lr=0.000331   train_loss=102.538   test_loss=193.055    min_test_loss=183.929
+Eopch225   lr=0.000328   train_loss=103.884   test_loss=193.640    min_test_loss=183.929
+Eopch226   lr=0.000324   train_loss=98.183   test_loss=206.297    min_test_loss=183.929
+Eopch227   lr=0.000321   train_loss=103.629   test_loss=192.610    min_test_loss=183.929
+Eopch228   lr=0.000318   train_loss=101.570   test_loss=194.865    min_test_loss=183.929
+Eopch229   lr=0.000315   train_loss=99.883   test_loss=190.616    min_test_loss=183.929
+Eopch230   lr=0.000312   train_loss=97.924   test_loss=198.292    min_test_loss=183.929
+Eopch231   lr=0.000309   train_loss=94.710   test_loss=211.327    min_test_loss=183.929
+Eopch232   lr=0.000305   train_loss=103.865   test_loss=191.110    min_test_loss=183.929
+Eopch233   lr=0.000302   train_loss=102.757   test_loss=200.584    min_test_loss=183.929
+Eopch234   lr=0.000299   train_loss=100.339   test_loss=190.148    min_test_loss=183.929
+Eopch235   lr=0.000296   train_loss=100.587   test_loss=190.991    min_test_loss=183.929
+Eopch236   lr=0.000293   train_loss=99.089   test_loss=198.202    min_test_loss=183.929
+Eopch237   lr=0.000290   train_loss=104.547   test_loss=192.142    min_test_loss=183.929
+Eopch238   lr=0.000288   train_loss=94.819   test_loss=190.241    min_test_loss=183.929
+Eopch239   lr=0.000285   train_loss=101.647   test_loss=188.506    min_test_loss=183.929
+Eopch240   lr=0.000282   train_loss=95.269   test_loss=187.826    min_test_loss=183.929
+Eopch241   lr=0.000279   train_loss=94.418   test_loss=192.165    min_test_loss=183.929
+Eopch242   lr=0.000276   train_loss=97.194   test_loss=197.869    min_test_loss=183.929
+Eopch243   lr=0.000273   train_loss=99.281   test_loss=197.103    min_test_loss=183.929
+Eopch244   lr=0.000271   train_loss=102.153   test_loss=194.975    min_test_loss=183.929
+Eopch245   lr=0.000268   train_loss=97.166   test_loss=200.616    min_test_loss=183.929
+Eopch246   lr=0.000265   train_loss=95.706   test_loss=194.506    min_test_loss=183.929
+Eopch247   lr=0.000263   train_loss=98.212   test_loss=203.380    min_test_loss=183.929
+Eopch248   lr=0.000260   train_loss=99.845   test_loss=204.773    min_test_loss=183.929
+Eopch249   lr=0.000257   train_loss=97.203   test_loss=195.104    min_test_loss=183.929
+Eopch250   lr=0.000255   train_loss=99.428   test_loss=198.484    min_test_loss=183.929
+Eopch251   lr=0.000252   train_loss=99.896   test_loss=197.899    min_test_loss=183.929
+Eopch252   lr=0.000250   train_loss=96.995   test_loss=192.158    min_test_loss=183.929
+Eopch253   lr=0.000247   train_loss=96.781   test_loss=192.928    min_test_loss=183.929
+Eopch254   lr=0.000245   train_loss=102.671   test_loss=197.716    min_test_loss=183.929
+Eopch255   lr=0.000242   train_loss=95.858   test_loss=197.240    min_test_loss=183.929
+Eopch256   lr=0.000240   train_loss=99.443   test_loss=201.325    min_test_loss=183.929
+Eopch257   lr=0.000238   train_loss=98.091   test_loss=195.082    min_test_loss=183.929
+Eopch258   lr=0.000235   train_loss=100.275   test_loss=190.521    min_test_loss=183.929
+Eopch259   lr=0.000233   train_loss=97.314   test_loss=192.407    min_test_loss=183.929
+Eopch260   lr=0.000231   train_loss=97.546   test_loss=193.554    min_test_loss=183.929
+Eopch261   lr=0.000228   train_loss=94.011   test_loss=193.398    min_test_loss=183.929
+Eopch262   lr=0.000226   train_loss=98.394   test_loss=192.145    min_test_loss=183.929
+Eopch263   lr=0.000224   train_loss=100.407   test_loss=190.541    min_test_loss=183.929
+Eopch264   lr=0.000221   train_loss=97.404   test_loss=189.928    min_test_loss=183.929
+Eopch265   lr=0.000219   train_loss=91.502   test_loss=189.152    min_test_loss=183.929
+Eopch266   lr=0.000217   train_loss=98.148   test_loss=189.560    min_test_loss=183.929
+Eopch267   lr=0.000215   train_loss=99.121   test_loss=187.097    min_test_loss=183.929
+Eopch268   lr=0.000213   train_loss=103.340   test_loss=192.533    min_test_loss=183.929
+Eopch269   lr=0.000211   train_loss=95.740   test_loss=194.926    min_test_loss=183.929
+Eopch270   lr=0.000208   train_loss=96.927   test_loss=189.295    min_test_loss=183.929
+Eopch271   lr=0.000206   train_loss=97.580   test_loss=191.476    min_test_loss=183.929
+Eopch272   lr=0.000204   train_loss=98.291   test_loss=193.354    min_test_loss=183.929
+Eopch273   lr=0.000202   train_loss=95.094   test_loss=195.292    min_test_loss=183.929
+Eopch274   lr=0.000200   train_loss=96.270   test_loss=201.045    min_test_loss=183.929
+Eopch275   lr=0.000198   train_loss=99.519   test_loss=197.606    min_test_loss=183.929
+Eopch276   lr=0.000196   train_loss=92.167   test_loss=200.892    min_test_loss=183.929
+Eopch277   lr=0.000194   train_loss=98.574   test_loss=196.542    min_test_loss=183.929
+Eopch278   lr=0.000192   train_loss=97.159   test_loss=199.363    min_test_loss=183.929
+Eopch279   lr=0.000190   train_loss=100.685   test_loss=197.045    min_test_loss=183.929
+Eopch280   lr=0.000189   train_loss=96.747   test_loss=196.929    min_test_loss=183.929
+Eopch281   lr=0.000187   train_loss=95.964   test_loss=194.459    min_test_loss=183.929
+Eopch282   lr=0.000185   train_loss=95.873   test_loss=207.850    min_test_loss=183.929
+Eopch283   lr=0.000183   train_loss=94.529   test_loss=207.588    min_test_loss=183.929
+Eopch284   lr=0.000181   train_loss=97.083   test_loss=208.974    min_test_loss=183.929
+Eopch285   lr=0.000179   train_loss=98.959   test_loss=200.777    min_test_loss=183.929
+Eopch286   lr=0.000178   train_loss=96.716   test_loss=197.109    min_test_loss=183.929
+Eopch287   lr=0.000176   train_loss=96.280   test_loss=196.791    min_test_loss=183.929
+Eopch288   lr=0.000174   train_loss=98.027   test_loss=201.439    min_test_loss=183.929
+Eopch289   lr=0.000172   train_loss=94.252   test_loss=194.419    min_test_loss=183.929
+Eopch290   lr=0.000171   train_loss=91.292   test_loss=199.293    min_test_loss=183.929
+Eopch291   lr=0.000169   train_loss=96.726   test_loss=200.544    min_test_loss=183.929
+Eopch292   lr=0.000167   train_loss=93.159   test_loss=196.657    min_test_loss=183.929
+Eopch293   lr=0.000165   train_loss=98.004   test_loss=195.455    min_test_loss=183.929
+Eopch294   lr=0.000164   train_loss=91.035   test_loss=195.929    min_test_loss=183.929
+Eopch295   lr=0.000162   train_loss=95.187   test_loss=198.499    min_test_loss=183.929
+Eopch296   lr=0.000161   train_loss=95.368   test_loss=195.604    min_test_loss=183.929
+Eopch297   lr=0.000159   train_loss=99.102   test_loss=204.644    min_test_loss=183.929
+Eopch298   lr=0.000157   train_loss=92.549   test_loss=200.412    min_test_loss=183.929
+Eopch299   lr=0.000156   train_loss=88.667   test_loss=198.931    min_test_loss=183.929
+Eopch300   lr=0.000154   train_loss=93.955   test_loss=200.858    min_test_loss=183.929
+Eopch301   lr=0.000153   train_loss=99.747   test_loss=194.997    min_test_loss=183.929
+Eopch302   lr=0.000151   train_loss=94.363   test_loss=196.421    min_test_loss=183.929
+Eopch303   lr=0.000150   train_loss=94.353   test_loss=188.082    min_test_loss=183.929
+Eopch304   lr=0.000148   train_loss=96.993   test_loss=199.316    min_test_loss=183.929
+Eopch305   lr=0.000147   train_loss=95.359   test_loss=191.981    min_test_loss=183.929
+Eopch306   lr=0.000145   train_loss=94.819   test_loss=196.999    min_test_loss=183.929
+Eopch307   lr=0.000144   train_loss=91.419   test_loss=189.574    min_test_loss=183.929
+Eopch308   lr=0.000142   train_loss=91.325   test_loss=190.424    min_test_loss=183.929
+Eopch309   lr=0.000141   train_loss=95.386   test_loss=191.130    min_test_loss=183.929
+Eopch310   lr=0.000139   train_loss=90.912   test_loss=200.380    min_test_loss=183.929
+Eopch311   lr=0.000138   train_loss=96.152   test_loss=196.188    min_test_loss=183.929
+Eopch312   lr=0.000137   train_loss=96.080   test_loss=189.980    min_test_loss=183.929
+Eopch313   lr=0.000135   train_loss=91.202   test_loss=195.753    min_test_loss=183.929
+Eopch314   lr=0.000134   train_loss=99.122   test_loss=191.243    min_test_loss=183.929
+Eopch315   lr=0.000133   train_loss=92.861   test_loss=189.380    min_test_loss=183.929
+Eopch316   lr=0.000131   train_loss=93.347   test_loss=189.700    min_test_loss=183.929
+Eopch317   lr=0.000130   train_loss=92.568   test_loss=188.956    min_test_loss=183.929
+Eopch318   lr=0.000129   train_loss=93.221   test_loss=190.956    min_test_loss=183.929
+Eopch319   lr=0.000127   train_loss=95.411   test_loss=189.889    min_test_loss=183.929
+Eopch320   lr=0.000126   train_loss=91.110   test_loss=190.372    min_test_loss=183.929
+Eopch321   lr=0.000125   train_loss=89.878   test_loss=189.236    min_test_loss=183.929
+Eopch322   lr=0.000124   train_loss=95.835   test_loss=190.104    min_test_loss=183.929
+Eopch323   lr=0.000122   train_loss=96.656   test_loss=188.743    min_test_loss=183.929
+Eopch324   lr=0.000121   train_loss=97.059   test_loss=200.519    min_test_loss=183.929
+Eopch325   lr=0.000120   train_loss=87.807   test_loss=191.969    min_test_loss=183.929
+Eopch326   lr=0.000119   train_loss=88.318   test_loss=199.955    min_test_loss=183.929
+Eopch327   lr=0.000118   train_loss=94.046   test_loss=191.825    min_test_loss=183.929
+Eopch328   lr=0.000116   train_loss=91.674   test_loss=194.748    min_test_loss=183.929
+Eopch329   lr=0.000115   train_loss=94.053   test_loss=191.394    min_test_loss=183.929
+Eopch330   lr=0.000114   train_loss=94.187   test_loss=192.165    min_test_loss=183.929
+Eopch331   lr=0.000113   train_loss=92.912   test_loss=194.339    min_test_loss=183.929
+Eopch332   lr=0.000112   train_loss=92.608   test_loss=193.662    min_test_loss=183.929
+Eopch333   lr=0.000111   train_loss=91.658   test_loss=198.683    min_test_loss=183.929
+Eopch334   lr=0.000110   train_loss=92.382   test_loss=196.620    min_test_loss=183.929
+Eopch335   lr=0.000108   train_loss=89.436   test_loss=201.638    min_test_loss=183.929
+Eopch336   lr=0.000107   train_loss=93.538   test_loss=195.116    min_test_loss=183.929
+Eopch337   lr=0.000106   train_loss=92.304   test_loss=196.331    min_test_loss=183.929
+Eopch338   lr=0.000105   train_loss=91.608   test_loss=198.074    min_test_loss=183.929
+Eopch339   lr=0.000104   train_loss=91.633   test_loss=199.370    min_test_loss=183.929
+Eopch340   lr=0.000103   train_loss=92.748   test_loss=196.680    min_test_loss=183.929
+Eopch341   lr=0.000102   train_loss=93.518   test_loss=200.661    min_test_loss=183.929
+Eopch342   lr=0.000101   train_loss=93.713   test_loss=205.829    min_test_loss=183.929
+Eopch343   lr=0.000100   train_loss=96.551   test_loss=191.725    min_test_loss=183.929
+Eopch344   lr=0.000099   train_loss=91.005   test_loss=205.461    min_test_loss=183.929
+Eopch345   lr=0.000098   train_loss=90.377   test_loss=193.706    min_test_loss=183.929
+Eopch346   lr=0.000097   train_loss=89.520   test_loss=202.130    min_test_loss=183.929
+Eopch347   lr=0.000096   train_loss=97.547   test_loss=200.217    min_test_loss=183.929
+Eopch348   lr=0.000095   train_loss=96.413   test_loss=196.858    min_test_loss=183.929
+Eopch349   lr=0.000094   train_loss=94.851   test_loss=198.457    min_test_loss=183.929
+Eopch350   lr=0.000093   train_loss=95.089   test_loss=196.529    min_test_loss=183.929
+Eopch351   lr=0.000092   train_loss=97.354   test_loss=199.063    min_test_loss=183.929
+Eopch352   lr=0.000091   train_loss=92.436   test_loss=195.591    min_test_loss=183.929
+Eopch353   lr=0.000091   train_loss=88.977   test_loss=201.213    min_test_loss=183.929
+Eopch354   lr=0.000090   train_loss=90.753   test_loss=198.517    min_test_loss=183.929
+Eopch355   lr=0.000089   train_loss=90.453   test_loss=191.935    min_test_loss=183.929
+Eopch356   lr=0.000088   train_loss=90.715   test_loss=196.059    min_test_loss=183.929
+Eopch357   lr=0.000087   train_loss=89.424   test_loss=190.459    min_test_loss=183.929
+Eopch358   lr=0.000086   train_loss=89.562   test_loss=194.619    min_test_loss=183.929
+Eopch359   lr=0.000085   train_loss=89.710   test_loss=196.163    min_test_loss=183.929
+Eopch360   lr=0.000084   train_loss=92.253   test_loss=187.795    min_test_loss=183.929
+Eopch361   lr=0.000084   train_loss=94.845   test_loss=201.563    min_test_loss=183.929
+Eopch362   lr=0.000083   train_loss=94.470   test_loss=188.915    min_test_loss=183.929
+Eopch363   lr=0.000082   train_loss=90.844   test_loss=199.699    min_test_loss=183.929
+Eopch364   lr=0.000081   train_loss=96.544   test_loss=196.465    min_test_loss=183.929
+Eopch365   lr=0.000080   train_loss=93.848   test_loss=195.902    min_test_loss=183.929
+Eopch366   lr=0.000079   train_loss=96.820   test_loss=195.842    min_test_loss=183.929
+Eopch367   lr=0.000079   train_loss=90.270   test_loss=197.420    min_test_loss=183.929
+Eopch368   lr=0.000078   train_loss=89.782   test_loss=196.378    min_test_loss=183.929
+Eopch369   lr=0.000077   train_loss=91.161   test_loss=193.715    min_test_loss=183.929
+Eopch370   lr=0.000076   train_loss=91.269   test_loss=194.283    min_test_loss=183.929
+Eopch371   lr=0.000076   train_loss=96.088   test_loss=196.122    min_test_loss=183.929
+Eopch372   lr=0.000075   train_loss=93.901   test_loss=196.314    min_test_loss=183.929
+Eopch373   lr=0.000074   train_loss=89.384   test_loss=192.900    min_test_loss=183.929
+Eopch374   lr=0.000073   train_loss=97.718   test_loss=193.491    min_test_loss=183.929
+Eopch375   lr=0.000073   train_loss=94.383   test_loss=193.437    min_test_loss=183.929
+Eopch376   lr=0.000072   train_loss=95.472   test_loss=199.740    min_test_loss=183.929
+Eopch377   lr=0.000071   train_loss=94.124   test_loss=193.664    min_test_loss=183.929
+Eopch378   lr=0.000070   train_loss=92.374   test_loss=195.451    min_test_loss=183.929
+Eopch379   lr=0.000070   train_loss=93.301   test_loss=196.644    min_test_loss=183.929
+Eopch380   lr=0.000069   train_loss=94.290   test_loss=195.133    min_test_loss=183.929
+Eopch381   lr=0.000068   train_loss=88.542   test_loss=200.211    min_test_loss=183.929
+Eopch382   lr=0.000068   train_loss=93.426   test_loss=195.259    min_test_loss=183.929
+Eopch383   lr=0.000067   train_loss=94.798   test_loss=195.404    min_test_loss=183.929
+Eopch384   lr=0.000066   train_loss=87.398   test_loss=199.851    min_test_loss=183.929
+Eopch385   lr=0.000066   train_loss=92.072   test_loss=190.499    min_test_loss=183.929
+Eopch386   lr=0.000065   train_loss=91.792   test_loss=191.794    min_test_loss=183.929
+Eopch387   lr=0.000064   train_loss=96.125   test_loss=189.058    min_test_loss=183.929
+Eopch388   lr=0.000064   train_loss=91.113   test_loss=191.139    min_test_loss=183.929
+Eopch389   lr=0.000063   train_loss=93.691   test_loss=189.229    min_test_loss=183.929
+Eopch390   lr=0.000062   train_loss=95.859   test_loss=191.065    min_test_loss=183.929
+Eopch391   lr=0.000062   train_loss=92.763   test_loss=197.431    min_test_loss=183.929
+Eopch392   lr=0.000061   train_loss=95.594   test_loss=207.067    min_test_loss=183.929
+Eopch393   lr=0.000061   train_loss=93.820   test_loss=203.513    min_test_loss=183.929
+Eopch394   lr=0.000060   train_loss=85.744   test_loss=194.423    min_test_loss=183.929
+Eopch395   lr=0.000059   train_loss=93.122   test_loss=196.674    min_test_loss=183.929
+Eopch396   lr=0.000059   train_loss=85.278   test_loss=192.969    min_test_loss=183.929
+Eopch397   lr=0.000058   train_loss=94.104   test_loss=199.155    min_test_loss=183.929
+Eopch398   lr=0.000058   train_loss=95.123   test_loss=196.478    min_test_loss=183.929
+Eopch399   lr=0.000057   train_loss=90.182   test_loss=200.291    min_test_loss=183.929
+Eopch400   lr=0.000056   train_loss=90.459   test_loss=192.988    min_test_loss=183.929
+Eopch401   lr=0.000056   train_loss=88.143   test_loss=194.500    min_test_loss=183.929
+Eopch402   lr=0.000055   train_loss=93.308   test_loss=197.342    min_test_loss=183.929
+Eopch403   lr=0.000055   train_loss=92.136   test_loss=193.894    min_test_loss=183.929
+Eopch404   lr=0.000054   train_loss=90.608   test_loss=191.671    min_test_loss=183.929
+Eopch405   lr=0.000054   train_loss=85.952   test_loss=205.071    min_test_loss=183.929
+Eopch406   lr=0.000053   train_loss=92.473   test_loss=191.486    min_test_loss=183.929
+Eopch407   lr=0.000053   train_loss=87.349   test_loss=195.686    min_test_loss=183.929
+Eopch408   lr=0.000052   train_loss=91.797   test_loss=195.819    min_test_loss=183.929
+Eopch409   lr=0.000052   train_loss=94.256   test_loss=196.091    min_test_loss=183.929
+Eopch410   lr=0.000051   train_loss=92.785   test_loss=198.895    min_test_loss=183.929
+Eopch411   lr=0.000051   train_loss=92.800   test_loss=190.196    min_test_loss=183.929
+Eopch412   lr=0.000050   train_loss=87.525   test_loss=195.823    min_test_loss=183.929
+Eopch413   lr=0.000050   train_loss=932017-07-27 22:57:19.667843: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 27837509 get requests, put_count=27837510 evicted_count=12000 eviction_rate=0.000431073 and unsatisfied allocation rate=0.000431792
+.344   test_loss=190.916    min_test_loss=183.929
+Eopch414   lr=0.000049   train_loss=88.197   test_loss=193.841    min_test_loss=183.929
+Eopch415   lr=0.000049   train_loss=93.925   test_loss=192.397    min_test_loss=183.929
+Eopch416   lr=0.000048   train_loss=88.952   test_loss=194.667    min_test_loss=183.929
+Eopch417   lr=0.000048   train_loss=92.126   test_loss=190.172    min_test_loss=183.929
+Eopch418   lr=0.000047   train_loss=86.636   test_loss=195.279    min_test_loss=183.929
+Eopch419   lr=0.000047   train_loss=95.632   test_loss=190.046    min_test_loss=183.929
+Eopch420   lr=0.000046   train_loss=89.304   test_loss=194.601    min_test_loss=183.929
+Eopch421   lr=0.000046   train_loss=91.906   test_loss=192.758    min_test_loss=183.929
+Eopch422   lr=0.000045   train_loss=90.968   test_loss=193.263    min_test_loss=183.929
+Eopch423   lr=0.000045   train_loss=87.339   test_loss=193.044    min_test_loss=183.929
+Eopch424   lr=0.000044   train_loss=89.172   test_loss=194.362    min_test_loss=183.929
+Eopch425   lr=0.000044   train_loss=90.545   test_loss=188.510    min_test_loss=183.929
+Eopch426   lr=0.000043   train_loss=90.856   test_loss=197.255    min_test_loss=183.929
+Eopch427   lr=0.000043   train_loss=95.362   test_loss=190.632    min_test_loss=183.929
+Eopch428   lr=0.000043   train_loss=88.685   test_loss=191.752    min_test_loss=183.929
+Eopch429   lr=0.000042   train_loss=95.089   test_loss=191.734    min_test_loss=183.929
+Eopch430   lr=0.000042   train_loss=93.097   test_loss=194.979    min_test_loss=183.929
+Eopch431   lr=0.000041   train_loss=92.709   test_loss=195.406    min_test_loss=183.929
+Eopch432   lr=0.000041   train_loss=92.435   test_loss=192.772    min_test_loss=183.929
+Eopch433   lr=0.000041   train_loss=90.290   test_loss=191.942    min_test_loss=183.929
+Eopch434   lr=0.000040   train_loss=97.634   test_loss=192.110    min_test_loss=183.929
+Eopch435   lr=0.000040   train_loss=88.908   test_loss=192.991    min_test_loss=183.929
+Eopch436   lr=0.000039   train_loss=86.814   test_loss=193.587    min_test_loss=183.929
+Eopch437   lr=0.000039   train_loss=89.328   test_loss=193.538    min_test_loss=183.929
+Eopch438   lr=0.000039   train_loss=94.607   test_loss=195.269    min_test_loss=183.929
+Eopch439   lr=0.000038   train_loss=91.269   test_loss=192.195    min_test_loss=183.929
+Eopch440   lr=0.000038   train_loss=90.870   test_loss=190.676    min_test_loss=183.929
+Eopch441   lr=0.000037   train_loss=84.938   test_loss=194.027    min_test_loss=183.929
+Eopch442   lr=0.000037   train_loss=94.523   test_loss=190.632    min_test_loss=183.929
+Eopch443   lr=0.000037   train_loss=94.310   test_loss=190.490    min_test_loss=183.929
+Eopch444   lr=0.000036   train_loss=91.849   test_loss=192.286    min_test_loss=183.929
+Eopch445   lr=0.000036   train_loss=92.336   test_loss=187.627    min_test_loss=183.929
+Eopch446   lr=0.000036   train_loss=93.601   test_loss=187.951    min_test_loss=183.929
+Eopch447   lr=0.000035   train_loss=91.250   test_loss=195.201    min_test_loss=183.929
+Eopch448   lr=0.000035   train_loss=89.583   test_loss=191.305    min_test_loss=183.929
+Eopch449   lr=0.000034   train_loss=91.650   test_loss=193.813    min_test_loss=183.929
+Eopch450   lr=0.000034   train_loss=90.550   test_loss=196.306    min_test_loss=183.929
+Eopch451   lr=0.000034   train_loss=87.507   test_loss=195.457    min_test_loss=183.929
+Eopch452   lr=0.000033   train_loss=89.415   test_loss=195.759    min_test_loss=183.929
+Eopch453   lr=0.000033   train_loss=90.352   test_loss=189.162    min_test_loss=183.929
+Eopch454   lr=0.000033   train_loss=88.163   test_loss=195.074    min_test_loss=183.929
+Eopch455   lr=0.000032   train_loss=87.544   test_loss=191.871    min_test_loss=183.929
+Eopch456   lr=0.000032   train_loss=90.614   test_loss=193.200    min_test_loss=183.929
+Eopch457   lr=0.000032   train_loss=89.474   test_loss=194.427    min_test_loss=183.929
+Eopch458   lr=0.000032   train_loss=92.516   test_loss=201.082    min_test_loss=183.929
+Eopch459   lr=0.000031   train_loss=88.131   test_loss=195.533    min_test_loss=183.929
+Eopch460   lr=0.000031   train_loss=94.148   test_loss=195.829    min_test_loss=183.929
+Eopch461   lr=0.000031   train_loss=89.168   test_loss=194.235    min_test_loss=183.929
+Eopch462   lr=0.000030   train_loss=93.335   test_loss=195.640    min_test_loss=183.929
+Eopch463   lr=0.000030   train_loss=95.589   test_loss=195.707    min_test_loss=183.929
+Eopch464   lr=0.000030   train_loss=92.135   test_loss=194.850    min_test_loss=183.929
+Eopch465   lr=0.000029   train_loss=90.656   test_loss=191.583    min_test_loss=183.929
+Eopch466   lr=0.000029   train_loss=92.701   test_loss=194.897    min_test_loss=183.929
+Eopch467   lr=0.000029   train_loss=88.835   test_loss=196.167    min_test_loss=183.929
+Eopch468   lr=0.000029   train_loss=91.004   test_loss=191.721    min_test_loss=183.929
+Eopch469   lr=0.000028   train_loss=91.586   test_loss=196.255    min_test_loss=183.929
+Eopch470   lr=0.000028   train_loss=93.232   test_loss=195.760    min_test_loss=183.929
+Eopch471   lr=0.000028   train_loss=94.401   test_loss=192.207    min_test_loss=183.929
+Eopch472   lr=0.000027   train_loss=90.050   test_loss=189.699    min_test_loss=183.929
+Eopch473   lr=0.000027   train_loss=91.459   test_loss=192.047    min_test_loss=183.929
+Eopch474   lr=0.000027   train_loss=86.826   test_loss=192.238    min_test_loss=183.929
+Eopch475   lr=0.000027   train_loss=89.572   test_loss=190.766    min_test_loss=183.929
+Eopch476   lr=0.000026   train_loss=90.334   test_loss=191.920    min_test_loss=183.929
+Eopch477   lr=0.000026   train_loss=91.089   test_loss=188.833    min_test_loss=183.929
+Eopch478   lr=0.000026   train_loss=86.235   test_loss=192.393    min_test_loss=183.929
+Eopch479   lr=0.000026   train_loss=85.496   test_loss=191.782    min_test_loss=183.929
+Eopch480   lr=0.000025   train_loss=96.617   test_loss=193.503    min_test_loss=183.929
+Eopch481   lr=0.000025   train_loss=88.493   test_loss=191.748    min_test_loss=183.929
+Eopch482   lr=0.000025   train_loss=92.649   test_loss=192.962    min_test_loss=183.929
+Eopch483   lr=0.000025   train_loss=93.575   test_loss=198.196    min_test_loss=183.929
+Eopch484   lr=0.000024   train_loss=90.642   test_loss=191.904    min_test_loss=183.929
+Eopch485   lr=0.000024   train_loss=92.850   test_loss=192.823    min_test_loss=183.929
+Eopch486   lr=0.000024   train_loss=86.801   test_loss=192.702    min_test_loss=183.929
+Eopch487   lr=0.000024   train_loss=89.529   test_loss=193.851    min_test_loss=183.929
+Eopch488   lr=0.000023   train_loss=91.110   test_loss=192.207    min_test_loss=183.929
+Eopch489   lr=0.000023   train_loss=89.012   test_loss=190.118    min_test_loss=183.929
+Eopch490   lr=0.000023   train_loss=91.200   test_loss=191.875    min_test_loss=183.929
+Eopch491   lr=0.000023   train_loss=91.654   test_loss=193.450    min_test_loss=183.929
+Eopch492   lr=0.000022   train_loss=93.608   test_loss=190.899    min_test_loss=183.929
+Eopch493   lr=0.000022   train_loss=89.894   test_loss=190.267    min_test_loss=183.929
+Eopch494   lr=0.000022   train_loss=83.800   test_loss=190.588    min_test_loss=183.929
+Eopch495   lr=0.000022   train_loss=92.192   test_loss=192.740    min_test_loss=183.929
+Eopch496   lr=0.000022   train_loss=89.410   test_loss=193.344    min_test_loss=183.929
+Eopch497   lr=0.000021   train_loss=92.708   test_loss=191.174    min_test_loss=183.929
+Eopch498   lr=0.000021   train_loss=91.027   test_loss=191.792    min_test_loss=183.929
+Eopch499   lr=0.000021   train_loss=92.787   test_loss=194.844    min_test_loss=183.929
+Eopch500   lr=0.000021   train_loss=94.879   test_loss=191.387    min_test_loss=183.929
+Eopch501   lr=0.000020   train_loss=91.234   test_loss=194.844    min_test_loss=183.929
+Eopch502   lr=0.000020   train_loss=88.531   test_loss=194.406    min_test_loss=183.929
+Eopch503   lr=0.000020   train_loss=87.346   test_loss=195.466    min_test_loss=183.929
+Eopch504   lr=0.000020   train_loss=88.244   test_loss=192.128    min_test_loss=183.929
+Eopch505   lr=0.000020   train_loss=90.171   test_loss=195.133    min_test_loss=183.929
+Eopch506   lr=0.000019   train_loss=93.487   test_loss=191.700    min_test_loss=183.929
+Eopch507   lr=0.000019   train_loss=88.560   test_loss=194.115    min_test_loss=183.929
+Eopch508   lr=0.000019   train_loss=93.700   test_loss=191.910    min_test_loss=183.929
+Eopch509   lr=0.000019   train_loss=89.737   test_loss=190.447    min_test_loss=183.929
+Eopch510   lr=0.000019   train_loss=94.169   test_loss=192.694    min_test_loss=183.929
+Eopch511   lr=0.000019   train_loss=90.723   test_loss=192.528    min_test_loss=183.929
+Eopch512   lr=0.000018   train_loss=89.043   test_loss=192.419    min_test_loss=183.929
+Eopch513   lr=0.000018   train_loss=92.447   test_loss=193.029    min_test_loss=183.929
+Eopch514   lr=0.000018   train_loss=94.273   test_loss=191.501    min_test_loss=183.929
+Eopch515   lr=0.000018   train_loss=92.414   test_loss=189.994    min_test_loss=183.929
+Eopch516   lr=0.000018   train_loss=94.042   test_loss=191.689    min_test_loss=183.929
+Eopch517   lr=0.000017   train_loss=93.098   test_loss=189.729    min_test_loss=183.929
+Eopch518   lr=0.000017   train_loss=88.628   test_loss=189.898    min_test_loss=183.929
+Eopch519   lr=0.000017   train_loss=90.480   test_loss=190.435    min_test_loss=183.929
+Eopch520   lr=0.000017   train_loss=92.589   test_loss=188.767    min_test_loss=183.929
+Eopch521   lr=0.000017   train_loss=92.087   test_loss=190.201    min_test_loss=183.929
+Eopch522   lr=0.000017   train_loss=93.288   test_loss=189.792    min_test_loss=183.929
+Eopch523   lr=0.000016   train_loss=96.282   test_loss=188.693    min_test_loss=183.929
+Eopch524   lr=0.000016   train_loss=92.182   test_loss=188.410    min_test_loss=183.929
+Eopch525   lr=0.000016   train_loss=89.638   test_loss=189.420    min_test_loss=183.929
+Eopch526   lr=0.000016   train_loss=88.962   test_loss=188.079    min_test_loss=183.929
+Eopch527   lr=0.000016   train_loss=90.575   test_loss=189.348    min_test_loss=183.929
+Eopch528   lr=0.000016   train_loss=92.223   test_loss=188.135    min_test_loss=183.929
+Eopch529   lr=0.000015   train_loss=91.095   test_loss=187.883    min_test_loss=183.929
+Eopch530   lr=0.000015   train_loss=90.081   test_loss=188.396    min_test_loss=183.929
+Eopch531   lr=0.000015   train_loss=89.821   test_loss=190.556    min_test_loss=183.929
+Eopch532   lr=0.000015   train_loss=89.418   test_loss=190.104    min_test_loss=183.929
+Eopch533   lr=0.000015   train_loss=89.767   test_loss=189.971    min_test_loss=183.929
+Eopch534   lr=0.000015   train_loss=90.952   test_loss=188.320    min_test_loss=183.929
+Eopch535   lr=0.000015   train_loss=93.014   test_loss=190.798    min_test_loss=183.929
+Eopch536   lr=0.000014   train_loss=91.041   test_loss=188.613    min_test_loss=183.929
+Eopch537   lr=0.000014   train_loss=89.813   test_loss=187.964    min_test_loss=183.929
+Eopch538   lr=0.000014   train_loss=91.543   test_loss=189.204    min_test_loss=183.929
+Eopch539   lr=0.000014   train_loss=88.994   test_loss=193.176    min_test_loss=183.929
+Eopch540   lr=0.000014   train_loss=90.152   test_loss=193.598    min_test_loss=183.929
+Eopch541   lr=0.000014   train_loss=93.080   test_loss=192.750    min_test_loss=183.929
+Eopch542   lr=0.000014   train_loss=92.150   test_loss=190.131    min_test_loss=183.929
+Eopch543   lr=0.000013   train_loss=94.159   test_loss=188.939    min_test_loss=183.929
+Eopch544   lr=0.000013   train_loss=87.650   test_loss=188.549    min_test_loss=183.929
+Eopch545   lr=0.000013   train_loss=93.066   test_loss=192.137    min_test_loss=183.929
+Eopch546   lr=0.000013   train_loss=95.487   test_loss=190.824    min_test_loss=183.929
+Eopch547   lr=0.000013   train_loss=86.316   test_loss=191.059    min_test_loss=183.929
+Eopch548   lr=0.000013   train_loss=90.538   test_loss=190.974    min_test_loss=183.929
+Eopch549   lr=0.000013   train_loss=97.152   test_loss=189.643    min_test_loss=183.929
+Eopch550   lr=0.000013   train_loss=94.312   test_loss=188.727    min_test_loss=183.929
+Eopch551   lr=0.000012   train_loss=90.760   test_loss=189.513    min_test_loss=183.929
+Eopch552   lr=0.000012   train_loss=88.832   test_loss=189.643    min_test_loss=183.929
+Eopch553   lr=0.000012   train_loss=88.350   test_loss=188.544    min_test_loss=183.929
+Eopch554   lr=0.000012   train_loss=93.674   test_loss=189.783    min_test_loss=183.929
+Eopch555   lr=0.000012   train_loss=91.323   test_loss=190.586    min_test_loss=183.929
+Eopch556   lr=0.000012   train_loss=89.713   test_loss=187.690    min_test_loss=183.929
+Eopch557   lr=0.000012   train_loss=88.906   test_loss=188.954    min_test_loss=183.929
+Eopch558   lr=0.000012   train_loss=90.737   test_loss=190.015    min_test_loss=183.929
+Eopch559   lr=0.000011   train_loss=91.745   test_loss=190.604    min_test_loss=183.929
+Eopch560   lr=0.000011   train_loss=89.366   test_loss=189.832    min_test_loss=183.929
+Eopch561   lr=0.000011   train_loss=92.082   test_loss=190.715    min_test_loss=183.929
+Eopch562   lr=0.000011   train_loss=90.879   test_loss=190.231    min_test_loss=183.929
+Eopch563   lr=0.000011   train_loss=88.446   test_loss=189.915    min_test_loss=183.929
+Eopch564   lr=0.000011   train_loss=88.427   test_loss=188.966    min_test_loss=183.929
+Eopch565   lr=0.000011   train_loss=89.010   test_loss=188.188    min_test_loss=183.929
+Eopch566   lr=0.000011   train_loss=96.261   test_loss=190.032    min_test_loss=183.929
+Eopch567   lr=0.000011   train_loss=91.112   test_loss=190.312    min_test_loss=183.929
+Eopch568   lr=0.000010   train_loss=87.781   test_loss=189.903    min_test_loss=183.929
+Eopch569   lr=0.000010   train_loss=89.347   test_loss=190.507    min_test_loss=183.929
+Eopch570   lr=0.000010   train_loss=90.283   test_loss=188.518    min_test_loss=183.929
+Eopch571   lr=0.000010   train_loss=89.017   test_loss=188.913    min_test_loss=183.929
+Eopch572   lr=0.000010   train_loss=93.823   test_loss=190.546    min_test_loss=183.929
+Eopch573   lr=0.000010   train_loss=90.352   test_loss=188.679    min_test_loss=183.929
+Eopch574   lr=0.000010   train_loss=87.651   test_loss=190.191    min_test_loss=183.929
+Eopch575   lr=0.000010   train_loss=92.676   test_loss=189.547    min_test_loss=183.929
+Eopch576   lr=0.000010   train_loss=91.487   test_loss=191.574    min_test_loss=183.929
+Eopch577   lr=0.000010   train_loss=92.047   test_loss=190.195    min_test_loss=183.929
+Eopch578   lr=0.000009   train_loss=91.912   test_loss=190.973    min_test_loss=183.929
+Eopch579   lr=0.000009   train_loss=89.963   test_loss=191.275    min_test_loss=183.929
+Eopch580   lr=0.000009   train_loss=87.533   test_loss=189.608    min_test_loss=183.929
+Eopch581   lr=0.000009   train_loss=88.855   test_loss=190.703    min_test_loss=183.929
+Eopch582   lr=0.000009   train_loss=93.103   test_loss=190.214    min_test_loss=183.929
+Eopch583   lr=0.000009   train_loss=90.852   test_loss=191.043    min_test_loss=183.929
+Eopch584   lr=0.000009   train_loss=89.839   test_loss=190.627    min_test_loss=183.929
+Eopch585   lr=0.000009   train_loss=86.365   test_loss=190.720    min_test_loss=183.929
+Eopch586   lr=0.000009   train_loss=90.720   test_loss=189.111    min_test_loss=183.929
+Eopch587   lr=0.000009   train_loss=88.677   test_loss=190.681    min_test_loss=183.929
+Eopch588   lr=0.000009   train_loss=93.187   test_loss=189.432    min_test_loss=183.929
+Eopch589   lr=0.000008   train_loss=88.707   test_loss=189.932    min_test_loss=183.929
+Eopch590   lr=0.000008   train_loss=93.180   test_loss=189.217    min_test_loss=183.929
+Eopch591   lr=0.000008   train_loss=89.744   test_loss=188.875    min_test_loss=183.929
+Eopch592   lr=0.000008   train_loss=96.289   test_loss=189.332    min_test_loss=183.929
+Eopch593   lr=0.000008   train_loss=90.621   test_loss=188.735    min_test_loss=183.929
+Eopch594   lr=0.000008   train_loss=93.302   test_loss=188.965    min_test_loss=183.929
+Eopch595   lr=0.000008   train_loss=92.290   test_loss=188.981    min_test_loss=183.929
+Eopch596   lr=0.000008   train_loss=92.323   test_loss=189.416    min_test_loss=183.929
+Eopch597   lr=0.000008   train_loss=90.140   test_loss=189.524    min_test_loss=183.929
+Eopch598   lr=0.000008   train_loss=97.371   test_loss=188.482    min_test_loss=183.929
+Eopch599   lr=0.000008   train_loss=86.316   test_loss=188.896    min_test_loss=183.929
+Eopch600   lr=0.000008   train_loss=91.641   test_loss=189.129    min_test_loss=183.929
+Eopch601   lr=0.000007   train_loss=91.047   test_loss=189.480    min_test_loss=183.929
+Eopch602   lr=0.000007   train_loss=91.192   test_loss=188.570    min_test_loss=183.929
+Eopch603   lr=0.000007   train_loss=92.088   test_loss=188.400    min_test_loss=183.929
+Eopch604   lr=0.000007   train_loss=91.691   test_loss=188.770    min_test_loss=183.929
+Eopch605   lr=0.000007   train_loss=88.125   test_loss=187.839    min_test_loss=183.929
+Eopch606   lr=0.000007   train_loss=88.653   test_loss=188.875    min_test_loss=183.929
+Eopch607   lr=0.000007   train_loss=89.537   test_loss=189.946    min_test_loss=183.929
+Eopch608   lr=0.000007   train_loss=88.991   test_loss=188.916    min_test_loss=183.929
+Eopch609   lr=0.000007   train_loss=93.181   test_loss=189.706    min_test_loss=183.929
+Eopch610   lr=0.000007   train_loss=86.880   test_loss=188.553    min_test_loss=183.929
+Eopch611   lr=0.000007   train_loss=87.101   test_loss=189.341    min_test_loss=183.929
+Eopch612   lr=0.000007   train_loss=91.519   test_loss=188.682    min_test_loss=183.929
+Eopch613   lr=0.000007   train_loss=87.652   test_loss=190.496    min_test_loss=183.929
+Eopch614   lr=0.000007   train_loss=92.696   test_loss=189.933    min_test_loss=183.929
+Eopch615   lr=0.000007   train_loss=91.123   test_loss=188.202    min_test_loss=183.929
+Eopch616   lr=0.000006   train_loss=83.823   test_loss=188.203    min_test_loss=183.929
+Eopch617   lr=0.000006   train_loss=90.135   test_loss=188.635    min_test_loss=183.929
+Eopch618   lr=0.000006   train_loss=89.457   test_loss=189.508    min_test_loss=183.929
+Eopch619   lr=0.000006   train_loss=91.576   test_loss=189.643    min_test_loss=183.929
+Eopch620   lr=0.000006   train_loss=89.627   test_loss=190.035    min_test_loss=183.929
+Eopch621   lr=0.000006   train_loss=92.625   test_loss=189.203    min_test_loss=183.929
+Eopch622   lr=0.000006   train_loss=89.576   test_loss=189.356    min_test_loss=183.929
+Eopch623   lr=0.000006   train_loss=91.199   test_loss=188.816    min_test_loss=183.929
+Eopch624   lr=0.000006   train_loss=92.450   test_loss=189.459    min_test_loss=183.929
+Eopch625   lr=0.000006   train_loss=92.769   test_loss=187.934    min_test_loss=183.929
+Eopch626   lr=0.000006   train_loss=89.450   test_loss=188.750    min_test_loss=183.929
+Eopch627   lr=0.000006   train_loss=91.521   test_loss=189.808    min_test_loss=183.929
+Eopch628   lr=0.000006   train_loss=90.922   test_loss=190.435    min_test_loss=183.929
+Eopch629   lr=0.000006   train_loss=93.645   test_loss=189.758    min_test_loss=183.929
+Eopch630   lr=0.000006   train_loss=93.469   test_loss=190.695    min_test_loss=183.929
+Eopch631   lr=0.000006   train_loss=94.307   test_loss=189.523    min_test_loss=183.929
+Eopch632   lr=0.000005   train_loss=94.039   test_loss=189.332    min_test_loss=183.929
+Eopch633   lr=0.000005   train_loss=86.430   test_loss=190.199    min_test_loss=183.929
+Eopch634   lr=0.000005   train_loss=87.527   test_loss=189.307    min_test_loss=183.929
+Eopch635   lr=0.000005   train_loss=93.667   test_loss=188.759    min_test_loss=183.929
+Eopch636   lr=0.000005   train_loss=89.335   test_loss=188.312    min_test_loss=183.929
+Eopch637   lr=0.000005   train_loss=87.825   test_loss=189.074    min_test_loss=183.929
+Eopch638   lr=0.000005   train_loss=92.337   test_loss=188.466    min_test_loss=183.929
+Eopch639   lr=0.000005   train_loss=87.277   test_loss=188.928    min_test_loss=183.929
+Eopch640   lr=0.000005   train_loss=90.009   test_loss=189.150    min_test_loss=183.929
+Eopch641   lr=0.000005   train_loss=91.254   test_loss=189.268    min_test_loss=183.929
+Eopch642   lr=0.000005   train_loss=90.066   test_loss=187.442    min_test_loss=183.929
+Eopch643   lr=0.000005   train_loss=94.709   test_loss=188.263    min_test_loss=183.929
+Eopch644   lr=0.000005   train_loss=88.747   test_loss=188.830    min_test_loss=183.929
+Eopch645   lr=0.000005   train_loss=91.102   test_loss=188.809    min_test_loss=183.929
+Eopch646   lr=0.000005   train_loss=93.113   test_loss=188.163    min_test_loss=183.929
+Eopch647   lr=0.000005   train_loss=91.046   test_loss=189.066    min_test_loss=183.929
+Eopch648   lr=0.000005   train_loss=93.319   test_loss=188.364    min_test_loss=183.929
+Eopch649   lr=0.000005   train_loss=88.069   test_loss=188.345    min_test_loss=183.929
+Eopch650   lr=0.000005   train_loss=92.550   test_loss=188.560    min_test_loss=183.929
+Eopch651   lr=0.000005   train_loss=92.013   test_loss=189.127    min_test_loss=183.929
+Eopch652   lr=0.000004   train_loss=93.649   test_loss=189.281    min_test_loss=183.929
+Eopch653   lr=0.000004   train_loss=89.218   test_loss=190.495    min_test_loss=183.929
+Eopch654   lr=0.000004   train_loss=89.913   test_loss=190.120    min_test_loss=183.929
+Eopch655   lr=0.000004   train_loss=92.190   test_loss=189.912    min_test_loss=183.929
+Eopch656   lr=0.000004   train_loss=94.741   test_loss=189.873    min_test_loss=183.929
+Eopch657   lr=0.000004   train_loss=94.691   test_loss=189.671    min_test_loss=183.929
+Eopch658   lr=0.000004   train_loss=88.800   test_loss=190.146    min_test_loss=183.929
+Eopch659   lr=0.000004   train_loss=91.381   test_loss=190.140    min_test_loss=183.929
+Eopch660   lr=0.000004   train_loss=93.379   test_loss=190.202    min_test_loss=183.929
+Eopch661   lr=0.000004   train_loss=88.720   test_loss=189.615    min_test_loss=183.929
+Eopch662   lr=0.000004   train_loss=93.891   test_loss=189.064    min_test_loss=183.929
+Eopch663   lr=0.000004   train_loss=94.527   test_loss=188.942    min_test_loss=183.929
+Eopch664   lr=0.000004   train_loss=89.547   test_loss=189.013    min_test_loss=183.929
+Eopch665   lr=0.000004   train_loss=95.470   test_loss=188.673    min_test_loss=183.929
+Eopch666   lr=0.000004   train_loss=90.016   test_loss=188.072    min_test_loss=183.929
+Eopch667   lr=0.000004   train_loss=92.265   test_loss=188.951    min_test_loss=183.929
+Eopch668   lr=0.000004   train_loss=91.164   test_loss=190.223    min_test_loss=183.929
+Eopch669   lr=0.000004   train_loss=89.844   test_loss=188.999    min_test_loss=183.929
+Eopch670   lr=0.000004   train_loss=86.567   test_loss=187.806    min_test_loss=183.929
+Eopch671   lr=0.000004   train_loss=86.733   test_loss=187.941    min_test_loss=183.929
+Eopch672   lr=0.000004   train_loss=89.037   test_loss=188.106    min_test_loss=183.929
+Eopch673   lr=0.000004   train_loss=93.076   test_loss=188.071    min_test_loss=183.929
+Eopch674   lr=0.000004   train_loss=88.572   test_loss=188.558    min_test_loss=183.929
+Eopch675   lr=0.000004   train_loss=91.213   test_loss=188.465    min_test_loss=183.929
+Eopch676   lr=0.000004   train_loss=92.029   test_loss=189.340    min_test_loss=183.929
+Eopch677   lr=0.000003   train_loss=90.785   test_loss=188.977    min_test_loss=183.929
+Eopch678   lr=0.000003   train_loss=89.447   test_loss=188.630    min_test_loss=183.929
+Eopch679   lr=0.000003   train_loss=87.784   test_loss=188.723    min_test_loss=183.929
+Eopch680   lr=0.000003   train_loss=88.766   test_loss=189.270    min_test_loss=183.929
+Eopch681   lr=0.000003   train_loss=89.986   test_loss=189.006    min_test_loss=183.929
+Eopch682   lr=0.000003   train_loss=90.321   test_loss=189.346    min_test_loss=183.929
+Eopch683   lr=0.000003   train_loss=88.412   test_loss=190.244    min_test_loss=183.929
+Eopch684   lr=0.000003   train_loss=93.648   test_loss=188.530    min_test_loss=183.929
+Eopch685   lr=0.000003   train_loss=84.605   test_loss=188.872    min_test_loss=183.929
+Eopch686   lr=0.000003   train_loss=91.582   test_loss=189.169    min_test_loss=183.929
+Eopch687   lr=0.000003   train_loss=89.470   test_loss=188.964    min_test_loss=183.929
+Eopch688   lr=0.000003   train_loss=95.523   test_loss=188.870    min_test_loss=183.929
+Eopch689   lr=0.000003   train_loss=92.309   test_loss=189.010    min_test_loss=183.929
+Eopch690   lr=0.000003   train_loss=89.578   test_loss=189.456    min_test_loss=183.929
+Eopch691   lr=0.000003   train_loss=87.356   test_loss=188.494    min_test_loss=183.929
+Eopch692   lr=0.000003   train_loss=90.077   test_loss=188.760    min_test_loss=183.929
+Eopch693   lr=0.000003   train_loss=86.174   test_loss=189.205    min_test_loss=183.929
+Eopch694   lr=0.000003   train_loss=85.284   test_loss=188.546    min_test_loss=183.929
+Eopch695   lr=0.000003   train_loss=87.185   test_loss=188.617    min_test_loss=183.929
+Eopch696   lr=0.000003   train_loss=89.277   test_loss=188.661    min_test_loss=183.929
+Eopch697   lr=0.000003   train_loss=92.434   test_loss=189.424    min_test_loss=183.929
+Eopch698   lr=0.000003   train_loss=90.350   test_loss=189.313    min_test_loss=183.929
+Eopch699   lr=0.000003   train_loss=89.936   test_loss=189.033    min_test_loss=183.929
+Eopch700   lr=0.000003   train_loss=89.308   test_loss=189.098    min_test_loss=183.929
+Eopch701   lr=0.000003   train_loss=89.086   test_loss=189.577    min_test_loss=183.929
+Eopch702   lr=0.000003   train_loss=87.947   test_loss=189.091    min_test_loss=183.929
+Eopch703   lr=0.000003   train_loss=93.211   test_loss=188.574    min_test_loss=183.929
+Eopch704   lr=0.000003   train_loss=87.995   test_loss=189.490    min_test_loss=183.929
+Eopch705   lr=0.000003   train_loss=88.779   test_loss=188.468    min_test_loss=183.929
+Eopch706   lr=0.000003   train_loss=90.578   test_loss=188.955    min_test_loss=183.929
+Eopch707   lr=0.000003   train_loss=92.036   test_loss=189.661    min_test_loss=183.929
+Eopch708   lr=0.000003   train_loss=89.899   test_loss=189.919    min_test_loss=183.929
+Eopch709   lr=0.000003   train_loss=90.932   test_loss=189.136    min_test_loss=183.929
+Eopch710   lr=0.000003   train_loss=88.764   test_loss=189.235    min_test_loss=183.929
+Eopch711   lr=0.000002   train_loss=94.819   test_loss=189.191    min_test_loss=183.929
+Eopch712   lr=0.000002   train_loss=88.493   test_loss=189.407    min_test_loss=183.929
+Eopch713   lr=0.000002   train_loss=92.499   test_loss=189.928    min_test_loss=183.929
+Eopch714   lr=0.000002   train_loss=88.766   test_loss=189.757    min_test_loss=183.929
+Eopch715   lr=0.000002   train_loss=90.055   test_loss=189.970    min_test_loss=183.929
+Eopch716   lr=0.000002   train_loss=89.293   test_loss=189.515    min_test_loss=183.929
+Eopch717   lr=0.000002   train_loss=89.400   test_loss=189.053    min_test_loss=183.929
+Eopch718   lr=0.000002   train_loss=93.469   test_loss=189.228    min_test_loss=183.929
+Eopch719   lr=0.000002   train_loss=88.334   test_loss=189.570    min_test_loss=183.929
+Eopch720   lr=0.000002   train_loss=88.463   test_loss=189.617    min_test_loss=183.929
+Eopch721   lr=0.000002   train_loss=92.606   test_loss=189.518    min_test_loss=183.929
+Eopch722   lr=0.000002   train_loss=90.196   test_loss=189.736    min_test_loss=183.929
+Eopch723   lr=0.000002   train_loss=87.673   test_loss=189.534    min_test_loss=183.929
+Eopch724   lr=0.000002   train_loss=90.447   test_loss=189.117    min_test_loss=183.929
+Eopch725   lr=0.000002   train_loss=94.941   test_loss=190.189    min_test_loss=183.929
+Eopch726   lr=0.000002   train_loss=87.187   test_loss=189.609    min_test_loss=183.929
+Eopch727   lr=0.000002   train_loss=88.528   test_loss=189.098    min_test_loss=183.929
+Eopch728   lr=0.000002   train_loss=88.926   test_loss=190.021    min_test_loss=183.929
+Eopch729   lr=0.000002   train_loss=86.859   test_loss=190.346    min_test_loss=183.929
+Eopch730   lr=0.000002   train_loss=90.629   test_loss=190.575    min_test_loss=183.929
+Eopch731   lr=0.000002   train_loss=90.636   test_loss=190.456    min_test_loss=183.929
+Eopch732   lr=0.000002   train_loss=86.438   test_loss=190.337    min_test_loss=183.929
+Eopch733   lr=0.000002   train_loss=91.596   test_loss=190.719    min_test_loss=183.929
+Eopch734   lr=0.000002   train_loss=86.438   test_loss=190.121    min_test_loss=183.929
+Eopch735   lr=0.000002   train_loss=87.837   test_loss=190.159    min_test_loss=183.929
+Eopch736   lr=0.000002   train_loss=90.466   test_loss=190.151    min_test_loss=183.929
+Eopch737   lr=0.000002   train_loss=88.126   test_loss=189.513    min_test_loss=183.929
+Eopch738   lr=0.000002   train_loss=87.062   test_loss=190.354    min_test_loss=183.929
+Eopch739   lr=0.000002   train_loss=91.434   test_loss=190.481    min_test_loss=183.929
+Eopch740   lr=0.000002   train_loss=85.732   test_loss=190.663    min_test_loss=183.929
+Eopch741   lr=0.000002   train_loss=92.517   test_loss=190.679    min_test_loss=183.929
+Eopch742   lr=0.000002   train_loss=88.044   test_loss=190.304    min_test_loss=183.929
+Eopch743   lr=0.000002   train_loss=88.250   test_loss=190.131    min_test_loss=183.929
+Eopch744   lr=0.000002   train_loss=92.159   test_loss=190.651    min_test_loss=183.929
+Eopch745   lr=0.000002   train_loss=87.223   test_loss=190.460    min_test_loss=183.929
+Eopch746   lr=0.000002   train_loss=90.443   test_loss=190.617    min_test_loss=183.929
+Eopch747   lr=0.000002   train_loss=93.018   test_loss=190.334    min_test_loss=183.929
+Eopch748   lr=0.000002   train_loss=93.866   test_loss=189.927    min_test_loss=183.929
+Eopch749   lr=0.000002   train_loss=91.459   test_loss=189.670    min_test_loss=183.929
+Eopch750   lr=0.000002   train_loss=88.910   test_loss=189.546    min_test_loss=183.929
+Eopch751   lr=0.000002   train_loss=90.275   test_loss=189.871    min_test_loss=183.929
+Eopch752   lr=0.000002   train_loss=86.667   test_loss=189.963    min_test_loss=183.929
+Eopch753   lr=0.000002   train_loss=86.593   test_loss=189.829    min_test_loss=183.929
+Eopch754   lr=0.000002   train_loss=90.987   test_loss=189.694    min_test_loss=183.929
+Eopch755   lr=0.000002   train_loss=88.818   test_loss=189.761    min_test_loss=183.929
+Eopch756   lr=0.000002   train_loss=90.123   test_loss=189.863    min_test_loss=183.929
+Eopch757   lr=0.000002   train_loss=93.239   test_loss=190.015    min_test_loss=183.929
+Eopch758   lr=0.000002   train_loss=87.496   test_loss=190.476    min_test_loss=183.929
+Eopch759   lr=0.000002   train_loss=90.877   test_loss=190.371    min_test_loss=183.929
+Eopch760   lr=0.000002   train_loss=92.105   test_loss=190.264    min_test_loss=183.929
+Eopch761   lr=0.000001   train_loss=87.828   test_loss=190.305    min_test_loss=183.929
+Eopch762   lr=0.000001   train_loss=91.676   test_loss=190.314    min_test_loss=183.929
+Eopch763   lr=0.000001   train_loss=88.248   test_loss=190.005    min_test_loss=183.929
+Eopch764   lr=0.000001   train_loss=90.681   test_loss=190.211    min_test_loss=183.929
+Eopch765   lr=0.000001   train_loss=87.545   test_loss=190.164    min_test_loss=183.929
+Eopch766   lr=0.000001   train_loss=93.154   test_loss=190.168    min_test_loss=183.929
+Eopch767   lr=0.000001   train_loss=88.593   test_loss=190.145    min_test_loss=183.929
+Eopch768   lr=0.000001   train_loss=93.958   test_loss=189.785    min_test_loss=183.929
+Eopch769   lr=0.000001   train_loss=94.217   test_loss=189.504    min_test_loss=183.929
+Eopch770   lr=0.000001   train_loss=93.228   test_loss=189.678    min_test_loss=183.929
+Eopch771   lr=0.000001   train_loss=87.105   test_loss=189.524    min_test_loss=183.929
+Eopch772   lr=0.000001   train_loss=90.251   test_loss=189.563    min_test_loss=183.929
+Eopch773   lr=0.000001   train_loss=90.491   test_loss=189.523    min_test_loss=183.929
+Eopch774   lr=0.000001   train_loss=89.401   test_loss=189.547    min_test_loss=183.929
+Eopch775   lr=0.000001   train_loss=92.598   test_loss=189.441    min_test_loss=183.929
+Eopch776   lr=0.000001   train_loss=88.403   test_loss=189.485    min_test_loss=183.929
+Eopch777   lr=0.000001   train_loss=91.764   test_loss=189.757    min_test_loss=183.929
+Eopch778   lr=0.000001   train_loss=92.123   test_loss=189.945    min_test_loss=183.929
+Eopch779   lr=0.000001   train_loss=92.898   test_loss=189.753    min_test_loss=183.929
+Eopch780   lr=0.000001   train_loss=93.088   test_loss=190.106    min_test_loss=183.929
+Eopch781   lr=0.000001   train_loss=87.122   test_loss=190.533    min_test_loss=183.929
+Eopch782   lr=0.000001   train_loss=88.433   test_loss=190.215    min_test_loss=183.929
+Eopch783   lr=0.000001   train_loss=93.202   test_loss=190.057    min_test_loss=183.929
+Eopch784   lr=0.000001   train_loss=91.476   test_loss=190.349    min_test_loss=183.929
+Eopch785   lr=0.000001   train_loss=90.154   test_loss=190.402    min_2017-07-27 23:03:12.287247: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 48990870 get requests, put_count=48990870 evicted_count=22000 eviction_rate=0.000449063 and unsatisfied allocation rate=0.000449492
+test_loss=183.929
+Eopch786   lr=0.000001   train_loss=89.133   test_loss=190.250    min_test_loss=183.929
+Eopch787   lr=0.000001   train_loss=91.054   test_loss=190.003    min_test_loss=183.929
+Eopch788   lr=0.000001   train_loss=91.833   test_loss=189.829    min_test_loss=183.929
+Eopch789   lr=0.000001   train_loss=91.520   test_loss=189.873    min_test_loss=183.929
+Eopch790   lr=0.000001   train_loss=85.024   test_loss=189.900    min_test_loss=183.929
+Eopch791   lr=0.000001   train_loss=88.175   test_loss=189.754    min_test_loss=183.929
+Eopch792   lr=0.000001   train_loss=88.159   test_loss=190.048    min_test_loss=183.929
+Eopch793   lr=0.000001   train_loss=89.989   test_loss=190.172    min_test_loss=183.929
+Eopch794   lr=0.000001   train_loss=88.889   test_loss=190.301    min_test_loss=183.929
+Eopch795   lr=0.000001   train_loss=89.548   test_loss=190.117    min_test_loss=183.929
+Eopch796   lr=0.000001   train_loss=94.610   test_loss=189.920    min_test_loss=183.929
+Eopch797   lr=0.000001   train_loss=87.340   test_loss=189.716    min_test_loss=183.929
+Eopch798   lr=0.000001   train_loss=91.781   test_loss=189.722    min_test_loss=183.929
+Eopch799   lr=0.000001   train_loss=90.166   test_loss=189.761    min_test_loss=183.929
+Eopch800   lr=0.000001   train_loss=89.798   test_loss=189.926    min_test_loss=183.929
+Eopch801   lr=0.000001   train_loss=92.283   test_loss=189.977    min_test_loss=183.929
+Eopch802   lr=0.000001   train_loss=86.959   test_loss=189.958    min_test_loss=183.929
+Eopch803   lr=0.000001   train_loss=88.824   test_loss=189.823    min_test_loss=183.929
+Eopch804   lr=0.000001   train_loss=96.021   test_loss=189.914    min_test_loss=183.929
+Eopch805   lr=0.000001   train_loss=93.389   test_loss=190.125    min_test_loss=183.929
+Eopch806   lr=0.000001   train_loss=93.727   test_loss=190.212    min_test_loss=183.929
+Eopch807   lr=0.000001   train_loss=89.917   test_loss=189.752    min_test_loss=183.929
+Eopch808   lr=0.000001   train_loss=92.692   test_loss=190.040    min_test_loss=183.929
+Eopch809   lr=0.000001   train_loss=91.070   test_loss=190.104    min_test_loss=183.929
+Eopch810   lr=0.000001   train_loss=91.897   test_loss=189.927    min_test_loss=183.929
+Eopch811   lr=0.000001   train_loss=92.654   test_loss=189.613    min_test_loss=183.929
+Eopch812   lr=0.000001   train_loss=95.152   test_loss=189.616    min_test_loss=183.929
+Eopch813   lr=0.000001   train_loss=88.369   test_loss=189.458    min_test_loss=183.929
+Eopch814   lr=0.000001   train_loss=88.042   test_loss=189.508    min_test_loss=183.929
+Eopch815   lr=0.000001   train_loss=92.148   test_loss=189.510    min_test_loss=183.929
+Eopch816   lr=0.000001   train_loss=87.894   test_loss=189.608    min_test_loss=183.929
+Eopch817   lr=0.000001   train_loss=92.727   test_loss=189.861    min_test_loss=183.929
+Eopch818   lr=0.000001   train_loss=87.712   test_loss=189.953    min_test_loss=183.929
+Eopch819   lr=0.000001   train_loss=94.148   test_loss=189.729    min_test_loss=183.929
+Eopch820   lr=0.000001   train_loss=88.161   test_loss=189.737    min_test_loss=183.929
+Eopch821   lr=0.000001   train_loss=90.685   test_loss=189.898    min_test_loss=183.929
+Eopch822   lr=0.000001   train_loss=90.865   test_loss=189.860    min_test_loss=183.929
+Eopch823   lr=0.000001   train_loss=90.621   test_loss=189.427    min_test_loss=183.929
+Eopch824   lr=0.000001   train_loss=89.215   test_loss=189.279    min_test_loss=183.929
+Eopch825   lr=0.000001   train_loss=86.139   test_loss=189.544    min_test_loss=183.929
+Eopch826   lr=0.000001   train_loss=92.799   test_loss=189.491    min_test_loss=183.929
+Eopch827   lr=0.000001   train_loss=94.011   test_loss=189.411    min_test_loss=183.929
+Eopch828   lr=0.000001   train_loss=95.165   test_loss=189.504    min_test_loss=183.929
+Eopch829   lr=0.000001   train_loss=85.815   test_loss=189.401    min_test_loss=183.929
+Eopch830   lr=0.000001   train_loss=90.537   test_loss=189.445    min_test_loss=183.929
+Eopch831   lr=0.000001   train_loss=89.385   test_loss=189.552    min_test_loss=183.929
+Eopch832   lr=0.000001   train_loss=87.847   test_loss=189.649    min_test_loss=183.929
+Eopch833   lr=0.000001   train_loss=88.672   test_loss=189.477    min_test_loss=183.929
+Eopch834   lr=0.000001   train_loss=88.010   test_loss=189.568    min_test_loss=183.929
+Eopch835   lr=0.000001   train_loss=88.779   test_loss=189.675    min_test_loss=183.929
+Eopch836   lr=0.000001   train_loss=89.902   test_loss=189.596    min_test_loss=183.929
+Eopch837   lr=0.000001   train_loss=87.820   test_loss=189.609    min_test_loss=183.929
+Eopch838   lr=0.000001   train_loss=87.322   test_loss=189.601    min_test_loss=183.929
+Eopch839   lr=0.000001   train_loss=90.466   test_loss=189.504    min_test_loss=183.929
+Eopch840   lr=0.000001   train_loss=95.155   test_loss=189.578    min_test_loss=183.929
+Eopch841   lr=0.000001   train_loss=87.605   test_loss=189.447    min_test_loss=183.929
+Eopch842   lr=0.000001   train_loss=92.675   test_loss=189.487    min_test_loss=183.929
+Eopch843   lr=0.000001   train_loss=87.973   test_loss=189.382    min_test_loss=183.929
+Eopch844   lr=0.000001   train_loss=93.952   test_loss=189.407    min_test_loss=183.929
+Eopch845   lr=0.000001   train_loss=87.449   test_loss=189.441    min_test_loss=183.929
+Eopch846   lr=0.000001   train_loss=93.235   test_loss=189.683    min_test_loss=183.929
+Eopch847   lr=0.000001   train_loss=90.176   test_loss=189.547    min_test_loss=183.929
+Eopch848   lr=0.000001   train_loss=92.535   test_loss=189.521    min_test_loss=183.929
+Eopch849   lr=0.000001   train_loss=89.357   test_loss=189.609    min_test_loss=183.929
+Eopch850   lr=0.000001   train_loss=91.209   test_loss=189.649    min_test_loss=183.929
+Eopch851   lr=0.000001   train_loss=89.504   test_loss=189.611    min_test_loss=183.929
+Eopch852   lr=0.000001   train_loss=86.799   test_loss=189.778    min_test_loss=183.929
+Eopch853   lr=0.000001   train_loss=88.863   test_loss=189.802    min_test_loss=183.929
+Eopch854   lr=0.000001   train_loss=88.571   test_loss=189.770    min_test_loss=183.929
+Eopch855   lr=0.000001   train_loss=92.643   test_loss=189.566    min_test_loss=183.929
+Eopch856   lr=0.000001   train_loss=91.914   test_loss=189.574    min_test_loss=183.929
+Eopch857   lr=0.000001   train_loss=92.148   test_loss=189.361    min_test_loss=183.929
+Eopch858   lr=0.000001   train_loss=86.370   test_loss=189.459    min_test_loss=183.929
+Eopch859   lr=0.000001   train_loss=90.466   test_loss=189.368    min_test_loss=183.929
+Eopch860   lr=0.000001   train_loss=86.422   test_loss=189.343    min_test_loss=183.929
+Eopch861   lr=0.000001   train_loss=88.495   test_loss=189.225    min_test_loss=183.929
+Eopch862   lr=0.000001   train_loss=90.839   test_loss=189.179    min_test_loss=183.929
+Eopch863   lr=0.000001   train_loss=89.865   test_loss=189.345    min_test_loss=183.929
+Eopch864   lr=0.000001   train_loss=88.600   test_loss=189.234    min_test_loss=183.929
+Eopch865   lr=0.000001   train_loss=88.397   test_loss=189.114    min_test_loss=183.929
+Eopch866   lr=0.000001   train_loss=91.222   test_loss=189.051    min_test_loss=183.929
+Eopch867   lr=0.000001   train_loss=96.874   test_loss=188.938    min_test_loss=183.929
+Eopch868   lr=0.000001   train_loss=89.890   test_loss=189.038    min_test_loss=183.929
+Eopch869   lr=0.000001   train_loss=93.964   test_loss=189.119    min_test_loss=183.929
+Eopch870   lr=0.000001   train_loss=89.615   test_loss=189.081    min_test_loss=183.929
+Eopch871   lr=0.000000   train_loss=89.804   test_loss=189.157    min_test_loss=183.929
+Eopch872   lr=0.000000   train_loss=88.709   test_loss=189.328    min_test_loss=183.929
+Eopch873   lr=0.000000   train_loss=86.743   test_loss=189.276    min_test_loss=183.929
+Eopch874   lr=0.000000   train_loss=92.877   test_loss=189.382    min_test_loss=183.929
+Eopch875   lr=0.000000   train_loss=85.982   test_loss=189.302    min_test_loss=183.929
+Eopch876   lr=0.000000   train_loss=92.073   test_loss=189.469    min_test_loss=183.929
+Eopch877   lr=0.000000   train_loss=89.565   test_loss=189.548    min_test_loss=183.929
+Eopch878   lr=0.000000   train_loss=89.013   test_loss=189.764    min_test_los2017-07-27 23:04:44.380554: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 54327839 get requests, put_count=54327839 evicted_count=32000 eviction_rate=0.000589017 and unsatisfied allocation rate=0.000589403
+s=183.929
+Eopch879   lr=0.000000   train_loss=90.063   test_loss=189.544    min_test_loss=183.929
+Eopch880   lr=0.000000   train_loss=86.141   test_loss=189.648    min_test_loss=183.929
+Eopch881   lr=0.000000   train_loss=89.556   test_loss=189.742    min_test_loss=183.929
+Eopch882   lr=0.000000   train_loss=90.895   test_loss=189.812    min_test_loss=183.929
+Eopch883   lr=0.000000   train_loss=88.059   test_loss=189.765    min_test_loss=183.929
+Eopch884   lr=0.000000   train_loss=92.761   test_loss=189.855    min_test_loss=183.929
+Eopch885   lr=0.000000   train_loss=92.195   test_loss=189.804    min_test_loss=183.929
+Eopch886   lr=0.000000   train_loss=89.926   test_loss=189.805    min_test_loss=183.929
+Eopch887   lr=0.000000   train_loss=92.892   test_loss=189.806    min_test_loss=183.929
+Eopch888   lr=0.000000   train_loss=85.939   test_loss=189.837    min_test_loss=183.929
+Eopch889   lr=0.000000   train_loss=91.194   test_loss=189.743    min_test_loss=183.929
+Eopch890   lr=0.000000   train_loss=88.832   test_loss=189.695    min_test_loss=183.929
+Eopch891   lr=0.000000   train_loss=90.001   test_loss=189.698    min_test_loss=183.929
+Eopch892   lr=0.000000   train_loss=94.378   test_loss=189.747    min_test_loss=183.929
+Eopch893   lr=0.000000   train_loss=87.397   test_loss=189.694    min_test_loss=183.929
+Eopch894   lr=0.000000   train_loss=94.675   test_loss=189.700    min_test_loss=183.929
+Eopch895   lr=0.000000   train_loss=95.062   test_loss=189.630    min_test_loss=183.929
+Eopch896   lr=0.000000   train_loss=88.438   test_loss=189.729    min_test_loss=183.929
+Eopch897   lr=0.000000   train_loss=83.220   test_loss=189.686    min_test_loss=183.929
+Eopch898   lr=0.000000   train_loss=87.134   test_loss=189.681    min_test_loss=183.929
+Eopch899   lr=0.000000   train_loss=90.135   test_loss=189.690    min_test_loss=183.929
+Eopch900   lr=0.000000   train_loss=89.309   test_loss=189.718    min_test_loss=183.929
+Eopch901   lr=0.000000   train_loss=90.524   test_loss=189.639    min_test_loss=183.929
+Eopch902   lr=0.000000   train_loss=93.530   test_loss=189.673    min_test_loss=183.929
+Eopch903   lr=0.000000   train_loss=91.591   test_loss=189.581    min_test_loss=183.929
+Eopch904   lr=0.000000   train_loss=93.579   test_loss=189.589    min_test_loss=183.929
+Eopch905   lr=0.000000   train_loss=87.707   test_loss=189.504    min_test_loss=183.929
+Eopch906   lr=0.000000   train_loss=92.191   test_loss=189.580    min_test_loss=183.929
+Eopch907   lr=0.000000   train_loss=91.507   test_loss=189.675    min_test_loss=183.929
+Eopch908   lr=0.000000   train_loss=88.343   test_loss=189.737    min_test_loss=183.929
+Eopch909   lr=0.000000   train_loss=88.751   test_loss=189.781    min_test_loss=183.929
+Eopch910   lr=0.000000   train_loss=93.321   test_loss=189.758    min_test_loss=183.929
+Eopch911   lr=0.000000   train_loss=93.825   test_loss=189.618    min_test_loss=183.929
+Eopch912   lr=0.000000   train_loss=94.401   test_loss=189.611    min_test_loss=183.929
+Eopch913   lr=0.000000   train_loss=92.679   test_loss=189.611    min_test_loss=183.929
+Eopch914   lr=0.000000   train_loss=98.553   test_loss=189.577    min_test_loss=183.929
+Eopch915   lr=0.000000   train_loss=87.695   test_loss=189.578    min_test_loss=183.929
+Eopch916   lr=0.000000   train_loss=86.695   test_loss=189.578    min_test_loss=183.929
+Eopch917   lr=0.000000   train_loss=93.455   test_loss=189.507    min_test_loss=183.929
+Eopch918   lr=0.000000   train_loss=87.980   test_loss=189.558    min_test_loss=183.929
+Eopch919   lr=0.000000   train_loss=91.397   test_loss=189.520    min_test_loss=183.929
+Eopch920   lr=0.000000   train_loss=91.591   test_loss=189.481    min_test_loss=183.929
+Eopch921   lr=0.000000   train_loss=90.930   test_loss=189.490    min_test_loss=183.929
+Eopch922   lr=0.000000   train_loss=94.753   test_loss=189.610    min_test_loss=183.929
+Eopch923   lr=0.000000   train_loss=88.056   test_loss=189.556    min_test_loss=183.929
+Eopch924   lr=0.000000   train_loss=89.073   test_loss=189.513    min_test_loss=183.929
+Eopch925   lr=0.000000   train_loss=93.531   test_loss=189.615    min_test_loss=183.929
+Eopch926   lr=0.000000   train_loss=89.193   test_loss=189.613    min_test_loss=183.929
+Eopch927   lr=0.000000   train_loss=88.140   test_loss=189.599    min_test_loss=183.929
+Eopch928   lr=0.000000   train_loss=91.929   test_loss=189.651    min_test_loss=183.929
+Eopch929   lr=0.000000   train_loss=89.084   test_loss=189.587    min_test_loss=183.929
+Eopch930   lr=0.000000   train_loss=90.441   test_loss=189.592    min_test_loss=183.929
+Eopch931   lr=0.000000   train_loss=87.908   test_loss=189.561    min_test_loss=183.929
+Eopch932   lr=0.000000   train_loss=92.839   test_loss=189.598    min_test_loss=183.929
+Eopch933   lr=0.000000   train_loss=93.833   test_loss=189.573    min_test_loss=183.929
+Eopch934   lr=0.000000   train_loss=90.743   test_loss=189.646    min_test_loss=183.929
+Eopch935   lr=0.000000   train_loss=86.570   test_loss=189.616    min_test_loss=183.929
+Eopch936   lr=0.000000   train_loss=92.920   test_loss=189.555    min_test_loss=183.929
+Eopch937   lr=0.000000   train_loss=90.978   test_loss=189.532    min_test_loss=183.929
+Eopch938   lr=0.000000   train_loss=93.990   test_loss=189.551    min_test_loss=183.929
+Eopch939   lr=0.000000   train_loss=91.673   test_loss=189.623    min_test_loss=183.929
+Eopch940   lr=0.000000   train_loss=90.862   test_loss=189.613    min_test_loss=183.929
+Eopch941   lr=0.000000   train_loss=89.040   test_loss=189.676    min_test_loss=183.929
+Eopch942   lr=0.000000   train_loss=96.345   test_loss=189.695    min_test_loss=183.929
+Eopch943   lr=0.000000   train_loss=93.421   test_loss=189.703    min_test_loss=183.929
+Eopch944   lr=0.000000   train_loss=92.980   test_loss=189.744    min_test_loss=183.929
+Eopch945   lr=0.000000   train_loss=87.691   test_loss=189.800    min_test_loss=183.929
+Eopch946   lr=0.000000   train_loss=92.618   test_loss=189.820    min_test_loss=183.929
+Eopch947   lr=0.000000   train_loss=90.782   test_loss=189.820    min_test_loss=183.929
+Eopch948   lr=0.000000   train_loss=89.356   test_loss=189.635    min_test_loss=183.929
+Eopch949   lr=0.000000   train_loss=91.442   test_loss=189.719    min_test_loss=183.929
+Eopch950   lr=0.000000   train_loss=88.367   test_loss=189.618    min_test_loss=183.929
+Eopch951   lr=0.000000   train_loss=88.904   test_loss=189.645    min_test_loss=183.929
+Eopch952   lr=0.000000   train_loss=94.080   test_loss=189.688    min_test_loss=183.929
+Eopch953   lr=0.000000   train_loss=88.130   test_loss=189.652    min_test_loss=183.929
+Eopch954   lr=0.000000   train_loss=94.954   test_loss=189.684    min_test_loss=183.929
+Eopch955   lr=0.000000   train_loss=88.103   test_loss=189.678    min_test_loss=183.929
+Eopch956   lr=0.000000   train_loss=93.296   test_loss=189.689    min_test_loss=183.929
+Eopch957   lr=0.000000   train_loss=88.679   test_loss=189.643    min_test_loss=183.929
+Eopch958   lr=0.000000   train_loss=88.966   test_loss=189.685    min_test_loss=183.929
+Eopch959   lr=0.000000   train_loss=91.967   test_loss=189.656    min_test_loss=183.929
+Eopch960   lr=0.000000   train_loss=87.703   test_loss=189.704    min_test_loss=183.929
+Eopch961   lr=0.000000   train_loss=84.183   test_loss=189.707    min_test_loss=183.929
+Eopch962   lr=0.000000   train_loss=90.502   test_loss=189.681    min_test_loss=183.929
+Eopch963   lr=0.000000   train_loss=86.806   test_loss=189.607    min_test_loss=183.929
+Eopch964   lr=0.000000   train_loss=93.642   test_loss=189.600    min_test_loss=183.929
+Eopch965   lr=0.000000   train_loss=88.528   test_loss=189.567    min_test_loss=183.929
+Eopch966   lr=0.000000   train_loss=90.478   test_loss=189.601    min_test_loss=183.929
+Eopch967   lr=0.000000   train_loss=92.170   test_loss=189.642    min_test_loss=183.929
+Eopch968   lr=0.000000   train_loss=89.739   test_loss=189.643    min_test_loss=183.929
+Eopch969   lr=0.000000   train_loss=90.022   test_loss=189.632    min_test_loss=183.929
+Eopch970   lr=0.000000   train_loss=88.609   test_loss=189.626    min_test_loss=183.929
+Eopch971   lr=0.000000   train_loss=85.891   test_loss=189.631    min_test_loss=183.922017-07-27 23:06:35.706852: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 60675696 get requests, put_count=60675697 evicted_count=42000 eviction_rate=0.000692205 and unsatisfied allocation rate=0.000692534
+9
+Eopch972   lr=0.000000   train_loss=90.773   test_loss=189.631    min_test_loss=183.929
+Eopch973   lr=0.000000   train_loss=93.331   test_loss=189.703    min_test_loss=183.929
+Eopch974   lr=0.000000   train_loss=91.141   test_loss=189.705    min_test_loss=183.929
+Eopch975   lr=0.000000   train_loss=93.855   test_loss=189.682    min_test_loss=183.929
+Eopch976   lr=0.000000   train_loss=86.979   test_loss=189.634    min_test_loss=183.929
+Eopch977   lr=0.000000   train_loss=90.937   test_loss=189.689    min_test_loss=183.929
+Eopch978   lr=0.000000   train_loss=94.348   test_loss=189.673    min_test_loss=183.929
+Eopch979   lr=0.000000   train_loss=91.171   test_loss=189.673    min_test_loss=183.929
+Eopch980   lr=0.000000   train_loss=86.293   test_loss=189.636    min_test_loss=183.929
+Eopch981   lr=0.000000   train_loss=86.129   test_loss=189.658    min_test_loss=183.929
+Eopch982   lr=0.000000   train_loss=91.709   test_loss=189.679    min_test_loss=183.929
+Eopch983   lr=0.000000   train_loss=91.191   test_loss=189.662    min_test_loss=183.929
+Eopch984   lr=0.000000   train_loss=90.603   test_loss=189.724    min_test_loss=183.929
+Eopch985   lr=0.000000   train_loss=93.663   test_loss=189.671    min_test_loss=183.929
+Eopch986   lr=0.000000   train_loss=93.360   test_loss=189.642    min_test_loss=183.929
+Eopch987   lr=0.000000   train_loss=86.999   test_loss=189.668    min_test_loss=183.929
+Eopch988   lr=0.000000   train_loss=91.275   test_loss=189.669    min_test_loss=183.929
+Eopch989   lr=0.000000   train_loss=94.110   test_loss=189.631    min_test_loss=183.929
+Eopch990   lr=0.000000   train_loss=92.269   test_loss=189.562    min_test_loss=183.929
+Eopch991   lr=0.000000   train_loss=90.985   test_loss=189.584    min_test_loss=183.929
+Eopch992   lr=0.000000   train_loss=86.168   test_loss=189.578    min_test_loss=183.929
+Eopch993   lr=0.000000   train_loss=93.593   test_loss=189.580    min_test_loss=183.929
+Eopch994   lr=0.000000   train_loss=90.160   test_loss=189.610    min_test_loss=183.929
+Eopch995   lr=0.000000   train_loss=90.695   test_loss=189.610    min_test_loss=183.929
+Eopch996   lr=0.000000   train_loss=87.934   test_loss=189.624    min_test_loss=183.929
+Eopch997   lr=0.000000   train_loss=84.786   test_loss=189.595    min_test_loss=183.929
+Eopch998   lr=0.000000   train_loss=92.526   test_loss=189.634    min_test_loss=183.929
+Eopch999   lr=0.000000   train_loss=90.212   test_loss=189.686    min_test_loss=183.929
