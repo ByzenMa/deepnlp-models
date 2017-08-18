@@ -72,6 +72,7 @@ def create_lookup_tables(text):
     for v_i, v in enumerate(vocab, len(CODES)):
         vocab_to_int[v] = v_i
     int_to_vocab = {v_i: v for v, v_i in vocab_to_int.items()}
+    print "vocab size: %d" % len(vocab_to_int)
     return vocab_to_int, int_to_vocab
 
 
